@@ -1,9 +1,12 @@
 # Salt detailed changelogs
 
-This is where I'm compiling and storing detailed changelogs for saltstack.  The
-release notes for salt generally include more high-level items and not
-necessarily every single change.  It's also hard to correlate all release note
-items with issues they pertain to.
+This is where I'm compiling and storing detailed changelogs for
+[saltstack](https://github.com/saltstack/salt).  The release notes for salt
+generally include more high-level items and not necessarily every single
+change.  It's also hard to correlate all release note items with issues they
+pertain to.  The [salt-users
+thread](https://groups.google.com/forum/#!topic/salt-users/QmQfp0G6PYU) has
+more on why I started writing this to begin with.
 
 Some of the releases are quite large and so these changelogs are quite large.
 I still like the details it provides, even though this is meant to be a
