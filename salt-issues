@@ -50,7 +50,7 @@ while ($out =~ m/$issuere/g) {
 check_issues(\%allissues);
 
 if ($unsaved) {
-    print STDERR "    saving cache\n";
+    print STDERR "saving cache\n";
     store $cache, $cachefile;
 }
 
