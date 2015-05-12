@@ -15,9 +15,25 @@ bigger picture.
 
 I'm including the script I use to generate these as well.  It's a simple perl
 script, but it does use connection caching (so it only makes 1 ssl connection
-to github's API), it caches the issues (and PR) metadata locally, so you can
-re-run the report and it doesn't have to re-fetch the issue data.  This lets
-me test changes to the output formatting very easily.
+to github's API), it caches the issues (and PR) metadata locally (with ~3300
+cached issues my cache file is ~14MB), so you can re-run the report and it
+doesn't have to re-fetch the issue data.  This lets me test changes to the
+output formatting very easily.
+
+The idea of the script is to work backwards from the actual commits.  It takes
+the `git diff` output, looks for anything that looks like a pull request or
+issue reference, then goes to the github API to pull the main metadata for
+that.  It then looks at the title of the issue as well as the body searching
+for any other issue references.  It **does not** search all comments because
+that would be very resource intensive and probably include a lot more false
+positives.
+
+At this point, it groups the changes by pull request (based on the `git diff
+--graph` indentations) and tries to include any references to other issues or
+other PRs.  This allows someone to look at an individual commit and then go up
+the stack and hopefully find the originating issue or even related issues.  It
+very much depends on issue references in commits or initial issue/PR
+submissions, though, so it's not perfect.
 
 ## How you run it
 
