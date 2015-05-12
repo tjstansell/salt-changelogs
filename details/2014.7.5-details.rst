@@ -1,0 +1,821 @@
+
+Changes for v2014.7.4..v2014.7.5
+--------------------------------
+
+*Generated at: Tue May  5 21:13:32 2015*
+
+Statistics:
+
+- Total Merges: **75**
+- Total Issue references: **43**
+- Total PR references: **95**
+
+Changes:
+
+
+- **PR** `#22754`_: (*twangboy*) Removed redundant \\ and "
+  @ *2015-04-16T19:50:00Z*
+
+  * 1fb606e Merge pull request `#22754`_ from twangboy/fix_bat_again
+  * 223c46a Removed redundent \\ and "
+
+- **PR** `#22748`_: (*twangboy*) Changed %cd% to %~dp0
+  @ *2015-04-16T16:27:31Z*
+
+  - **ISSUE** `#22740`_: (*lorengordon*) New Windows installer assumes salt is installed to the current directory
+    | refs: `#22748`_
+  * 75348e5 Merge pull request `#22748`_ from twangboy/fix_bat
+  * 2d3d0b1 Changed %cd% to %~dp0
+
+- **PR** `#22716`_: (*twangboy*) Removed list_pkgs caching
+  @ *2015-04-16T04:51:02Z*
+
+  - **ISSUE** `#17948`_: (*eoyslebo*) salt-call --local  pkg.list_pkgs does not list all installed programs on Windows
+    | refs: `#22716`_
+  - **ISSUE** `#11341`_: (*gtmacdonald*) Windows pkg.list_pkgs not working
+    | refs: `#22716`_
+  * 787ec88 Merge pull request `#22716`_ from twangboy/list_pkg_fix
+  * e1ee7db Update win_pkg.py
+
+  * 2ce35d2 Removed list_pkgs caching
+
+- **PR** `#22688`_: (*msteed*) Add missing command line options to man pages
+  @ *2015-04-15T05:17:47Z*
+
+  - **ISSUE** `#22676`_: (*msteed*) Options from cli help missing from manpages
+    | refs: `#22688`_
+  * 3a5a60b Merge pull request `#22688`_ from msteed/issue-22676
+  * 70f1ca9 Add missing command line options to man pages
+
+- **PR** `#22693`_: (*dmyerscough*) Fixing key error
+  @ *2015-04-15T04:06:45Z*
+
+  * fb31ab4 Merge pull request `#22693`_ from dmyerscough/fix-keyerror-in-salt-cloud
+  * f35c3bd Fixing key error
+
+- **PR** `#22674`_: (*jacobhammons*) Regenerated salt-call and salt.7 man pages
+  @ *2015-04-14T21:42:44Z*
+
+  - **ISSUE** `#22239`_: (*arthurlogilab*) include --retcode-passthrough in man pages
+    | refs: `#22666`_ `#22674`_
+  * 23a9d77 Merge pull request `#22674`_ from jacobhammons/2014.7
+  * 6e416fc Regenerated salt-call and salt.7 man pages Refs `#22239`_
+
+- **PR** `#22666`_: (*msteed*) Update salt-call manpage to match cli help text
+  @ *2015-04-14T19:24:03Z*
+
+  - **ISSUE** `#22239`_: (*arthurlogilab*) include --retcode-passthrough in man pages
+    | refs: `#22666`_ `#22674`_
+  * c0d1bdd Merge pull request `#22666`_ from msteed/issue_22239
+  * 5efb284 Update salt-call manpage to match cli help text
+
+- **PR** `#22623`_: (*thatch45*) merge 22115 in correct branch
+  @ *2015-04-14T18:47:20Z*
+
+  - **ISSUE** `#21910`_: (*justyns*) Salt-master too whitespace-sensitive when dealing with minion pub keys
+    | refs: `#22115`_
+  - **PR** `#22115`_: (*douglas-vaz*) Strip whitespace characters using strip() for pub key check
+    | refs: `#22623`_
+  * edeec67 Merge pull request `#22623`_ from thatch45/merge_22115
+  * 05a9f47 merge 22115 in correct branch
+
+- **PR** `#22656`_: (*jfindlay*) backport `#22624`_ to 2014.7
+  @ *2015-04-14T16:50:33Z*
+
+  - **PR** `#22624`_: (*rallytime*) Backport `#22563`_ to 2015.2
+    | refs: `#22656`_
+  - **PR** `#22563`_: (*kaszuba*) Fix for high cpu usage by salt-ssh
+    | refs: `#22624`_
+  * 795c01d Merge pull request `#22656`_ from jfindlay/`bp-22624`_
+  * e4d8478 Remove blank line
+
+  * 0a5c345 Fix for high cpu usage by salt-ssh
+
+- **PR** `#22643`_: (*TimJones*) Fix aptpkg.mod_repo returning OK even if apt-add-repository fails.
+  @ *2015-04-14T15:30:25Z*
+
+  - **ISSUE** `#22638`_: (*TimJones*) pkgrepo.managed with ppa returns OK even though it fails
+    | refs: `#22643`_
+  * 9a2aca4 Merge pull request `#22643`_ from TimJones/fix-pkgrepo-ppa-missing-add-apt-repository
+  * 5099621 Fix aptpkg.mod_repo returning OK even if apt-add-repository fails.
+
+- **PR** `#22625`_: (*rallytime*) Backport `#22565`_ to 2014.7
+  @ *2015-04-14T14:13:26Z*
+
+  - **PR** `#22565`_: (*kaszuba*) Increase frequency of ssh terminal output checking
+    | refs: `#22625`_
+  * a219be7 Merge pull request `#22625`_ from rallytime/`bp-22565`_
+  * ecc14de Increase frequency of ssh terminal output checking
+
+- **PR** `#22621`_: (*rallytime*) Add note about missing state internal keyword arguments to release notes
+  @ *2015-04-13T21:32:15Z*
+
+  - **ISSUE** `#22359`_: (*kiorky*) unless is not recognized as a state internal keyword
+    | refs: `#22365`_
+  - **ISSUE** `#21133`_: (*steverweber*) iptables issue.
+    | refs: `#21164`_
+  - **ISSUE** `#21120`_: (*kiorky*) highstate changes spurious warnings
+    | refs: `#21164`_
+  - **PR** `#22365`_: (*s0undt3ch*) Include `unless` in the state internal keywords.
+    | refs: `#22621`_
+  - **PR** `#21164`_: (*s0undt3ch*) Add `fun` and `state` to the runtime internal keywords listing
+    | refs: `#22621`_
+  * 670c07b Merge pull request `#22621`_ from rallytime/release_note_change
+  * fb03af3 Add note about missing state internal keyword arguments to release notes
+
+- **PR** `#22610`_: (*rallytime*) Add batch matching bug note to known issues in 2014.7.4 release notes
+  @ *2015-04-13T21:25:12Z*
+
+  - **ISSUE** `#18358`_: (*msciciel*) Problem with batch execution
+    | refs: `#22610`_ `#22350`_
+  * e24ffa0 Merge pull request `#22610`_ from rallytime/batch-bug_note
+  * 9eb273f Add batch matching bug note to known issues in 2014.7.4 release notes
+
+- **PR** `#22608`_: (*garethgreenaway*) remount related fixes in 2014.7
+  @ *2015-04-13T21:25:04Z*
+
+  * 953a625 Merge pull request `#22608`_ from garethgreenaway/19003_2014_7_mount_fixes
+  * 2278930 Adding cvfs and any fuse based filesystem to the list of filesystems that should not be remounted, rather unmounted and mounted again.
+
+- **PR** `#22476`_: (*tjstansell*) fix `#21998`_ - use yum reposdir as basedir defaults
+  @ *2015-04-13T20:53:39Z*
+
+  - **ISSUE** `#21998`_: (*tjstansell*) yum pkgrepo.managed basedir should default to reposdir location as specified in /etc/yum.conf
+    | refs: `#22476`_
+  * fe7ad0e Merge pull request `#22476`_ from tjstansell/`fix-21998`_
+  * 3013583 fix pylint issues
+
+  * 8117e9f fix `#21998`_ - use yum reposdir as basedir defaults
+
+- **PR** `#22597`_: (*hvnsweeting*) fix `#12480`_
+  @ *2015-04-13T20:39:52Z*
+
+  - **ISSUE** `#12480`_: (*renecunningham*) require sls fails when required state has single statement that shares state name.
+  * 289f6cb Merge pull request `#22597`_ from hvnsweeting/fix-sls-requisite-not-found
+  * d03970f fix `#12480`_
+
+- **PR** `#22553`_: (*anlutro*) Make git.latest work with empty source repositories
+  @ *2015-04-13T20:12:04Z*
+
+  - **ISSUE** `#15833`_: (*tomasfejfar*) git.latest does not check for HEAD existence
+    | refs: `#22553`_
+  * bd83b6c Merge pull request `#22553`_ from alprs/fix-git_latest_empty
+  * 4f77f8a Make git.latest work with empty repositories
+
+- **PR** `#22576`_: (*batulin-s*) fixed `#22329`_ bug
+  @ *2015-04-13T15:09:34Z*
+
+  - **ISSUE** `#22329`_: (*batulin-s*) Salt couldn't see the changes of accept_keywords.
+    | refs: `#22576`_
+  * 994f398 Merge pull request `#22576`_ from batulin-s/fix-checking-available-package-portage
+  * 7123ea7 fixed checking of available version of package when accept_keywords were changed (`#22329`_ bug)
+
+- **PR** `#22584`_: (*msusta*) Fixed malformed locale string in localmod module
+  @ *2015-04-13T14:20:08Z*
+
+  - **PR** `#22362`_: (*msusta*) Fixed malformed locale string in localmod module
+  * a269334 Merge pull request `#22584`_ from msusta/`bp-22362`_
+  * 625f141 Fixed malformed locale string in localmod module
+
+- **PR** `#22542`_: (*EliRibble*) Show errors on failure to render reactors
+  @ *2015-04-11T09:27:13Z*
+
+  - **ISSUE** `#22541`_: (*EliRibble*) No detailed information provided on failure while rendering a reactor
+  * 9b41276 Merge pull request `#22542`_ from EliRibble/`fix-22541`_
+  * 33b6e36 Show errors on failure to render reactors
+
+- **PR** `#22535`_: (*rallytime*) Add additional examples to grains.list_absent and grains.list_present
+  @ *2015-04-10T21:56:09Z*
+
+  - **ISSUE** `#22534`_: (*racooper*) Documentation update - salt.states.grains
+    | refs: `#22535`_
+  * 061c730 Merge pull request `#22535`_ from rallytime/`fix-22534`_
+  * d44d3e6 Add additional examples to grains.list_absent and grains.list_present
+
+- **PR** `#22532`_: (*rallytime*) Backport `#18846`_ to 2014.7
+  @ *2015-04-10T20:25:39Z*
+
+  - **PR** `#18846`_: (*basepi*) Add **kwargs to service.mod_watch
+    | refs: `#22532`_
+  * 20fc878 Merge pull request `#22532`_ from rallytime/`bp-18846`_
+  * b02d063 Add **kwargs to service.mod_watch
+
+- **PR** `#22484`_: (*EliRibble*) Fix 22472
+  @ *2015-04-10T15:57:13Z*
+
+  - **ISSUE** `#22472`_: (*EliRibble*) Add ability to specify a key prefix for ext_pillar S3
+  * 8d840aa Merge pull request `#22484`_ from EliRibble/`fix-22472`_
+  * 9f6f99f Fix pylint error
+
+  * 7daff3b Allow multiple bucket contents caches based on prefix
+
+  * 85380df Add the prefix to the pillar root when necessary
+
+- **PR** `#22521`_: (*anlutro*) Add force argument to service to trigger force_reload
+  @ *2015-04-10T15:56:24Z*
+
+  * b7f54cd Merge pull request `#22521`_ from alprs/feature-service_force_reload
+  * 25db9ad Add force argument to service to trigger force_reload
+
+- **PR** `#22523`_: (*hvnsweeting*) fix `#20420`_: using other state's comment makes comment grow fast
+  @ *2015-04-10T15:22:42Z*
+
+  - **ISSUE** `#20420`_: (*hvnsweeting*) 2014.7.1 state error output is very verbose and full of back-slash
+  * a62874d Merge pull request `#22523`_ from hvnsweeting/fix-big-comment-for-failed-requisite
+  * 4a21515 fix `#20420`_: using other state comment makes comment grow fast
+
+- **PR** `#22511`_: (*The-Loeki*) small enhancement to dnsutil module
+  @ *2015-04-10T15:19:34Z*
+
+  * 0b4baa0 Merge pull request `#22511`_ from The-Loeki/dnsutil-aaa
+  * 277929b Add version tag
+
+  * 83cf03e small typo fix
+
+  * 333daa1 Modify A to use non-deprecated C function Add AAAA function
+
+- **PR** `#22526`_: (*dhs-rec*) Return 0 for good puppet return codes (0 and 2), 1 otherwise
+  @ *2015-04-10T15:13:17Z*
+
+  * d80f258 Merge pull request `#22526`_ from dhs-rec/2014.7
+  * 36b9466 Return 0 for good puppet return codes (0 and 2), 1 otherwise
+
+- **PR** `#22464`_: (*jacksontj*) 2014.7: Fix Batching
+  @ *2015-04-10T15:11:25Z*
+
+  - **ISSUE** `#18358`_: (*msciciel*) Problem with batch execution
+    | refs: `#22610`_ `#22350`_
+  - **PR** `#22350`_: (*jacksontj*) 2015.2: Fix batching
+    | refs: `#22464`_
+  * 2481e6c Merge pull request `#22464`_ from jacksontj/2014.7
+  * 77395d7 Change to sets, we don't gaurantee minion ordering in returns
+
+  * 7614f7e Caste returns to sets, since we don't care about order.
+
+  * 30db262 Add timeout to batch tests
+
+  * 8d71c2b Cleanup pylint errors
+
+  * 3e67cb5 Re-work batching to more closely match CLI usage
+
+  * b119fae Stop chdir() in pcre minions
+
+  * 10c6788 Stop the os.chdir() to do glob
+
+  * 87b364f More clear about CKMinions' purpose in the docstring
+
+  * 63e28ba Revert "Just use ckminions in batch mode."
+
+  * 29cf438 Fix CKMinions _check_range_minions
+
+- **PR** `#22517`_: (*s0undt3ch*) Don't assume we're running the tests as root
+  @ *2015-04-10T02:50:38Z*
+
+  * c755463 Merge pull request `#22517`_ from s0undt3ch/2014.7
+  * 1181a50 Don't assume we're running the tests as root
+
+- **PR** `#22506`_: (*rallytime*) Backport `#20095`_ to 2014.7
+  @ *2015-04-09T19:42:39Z*
+
+  - **ISSUE** `#19737`_: (*Reiner030*) pkgrepo.managed could better handle long keyids
+    | refs: `#20095`_
+  - **PR** `#20095`_: (*colincoghill*) Handle pkgrepo keyids that have been converted to int.  `#19737`_
+    | refs: `#22506`_
+  * 38441a7 Merge pull request `#22506`_ from rallytime/`bp-20095`_
+  * 755c26e Handle pkgrepo keyids that have been converted to int.  `#19737`_
+
+- **PR** `#22381`_: (*batulin-s*) fix `#22321`_ bug
+  @ *2015-04-09T13:13:15Z*
+
+  - **ISSUE** `#22321`_: (*batulin-s*) module.portage_config bug with appending accept_keywords
+  * 0307ebe Merge pull request `#22381`_ from batulin-s/fix-portage_config-appending-accept_keywords
+  * 418fd97 may be last fix `#22321`_ bug
+
+  * a7361ff new fix `#22321`_ bug
+
+  * 03ba42c fix `#22321`_ bug
+
+- **PR** `#22492`_: (*davidjb*) Correctly report disk usage on Windows. Fix `#16508`_
+  @ *2015-04-09T13:11:36Z*
+
+  - **ISSUE** `#16508`_: (*o1e9*) wrong disk.usage reported for very big RAID disk
+    | refs: `#22485`_
+  - **PR** `#22485`_: (*davidjb*) Correctly report disk usage on Windows
+    | refs: `#22492`_
+  * 6662853 Merge pull request `#22492`_ from davidjb/2014.7
+  * 5d831ed Correctly report disk usage on Windows. Fix `#16508`_
+
+- **PR** `#22446`_: (*br0ch0n*) Issue `#20850`_ puppet run should return actual code
+  @ *2015-04-09T04:51:43Z*
+
+  - **ISSUE** `#20850`_: (*br0ch0n*) puppet.run always returns 0
+    | refs: `#22235`_
+  * bf1957a Merge pull request `#22446`_ from br0ch0n/2014.7
+  * 4e2ab36 Issue `#20850`_ puppet run should return actual code --lint fix
+
+  * c5ae09b Issue `#20850`_ puppet run should return actual code
+
+- **PR** `#22466`_: (*whiteinge*) Updated wording about nested dictionaries in states.file.managed docs
+  @ *2015-04-08T23:01:37Z*
+
+  - **ISSUE** `#22463`_: (*SaltwaterC*) Unable to use the "name" variable into the defaults of a file template
+    | refs: `#22466`_
+  * c83e2d7 Merge pull request `#22466`_ from whiteinge/doc-nested-dicts
+  * 9a3a747 Updated wording about nested dictionaries in states.file.managed docs
+
+- **PR** `#22403`_: (*hvnsweeting*) create host file if it does not exist
+  @ *2015-04-08T22:53:48Z*
+
+  * 8f0f5ae Merge pull request `#22403`_ from hvnsweeting/enh-host-module-when-missing-hostfile
+  * 9bf9855 create host file if it does not exist
+
+- **PR** `#22477`_: (*twangboy*) Moved file deletion to happen after user clicks install
+  @ *2015-04-08T20:27:05Z*
+
+  * c9394fd Merge pull request `#22477`_ from twangboy/fix_win_installer
+  * 6d99681 Moved file deletion to happen after user clicks install
+
+- **PR** `#22473`_: (*EliRibble*) Add the ability to specify key prefix for S3 ext_pillar
+  @ *2015-04-08T19:27:37Z*
+
+  - **ISSUE** `#22472`_: (*EliRibble*) Add ability to specify a key prefix for ext_pillar S3
+  * 8ed97c5 Merge pull request `#22473`_ from EliRibble/`fix-22472`_
+  * d96e470 Add the ability to specify key prefix for S3 ext_pillar
+
+- **PR** `#22448`_: (*rallytime*) Migrate old cloud config documentation to own page
+  @ *2015-04-08T18:32:36Z*
+
+  - **ISSUE** `#19450`_: (*gladiatr72*) documentation: topics/cloud/config
+    | refs: `#22448`_
+  * aa23eb0 Merge pull request `#22448`_ from rallytime/migrate_old_cloud_config_docs
+  * cecca10 Kill legacy cloud configuration syntax docs per techhat
+
+  * 52a3d50 Beef up cloud configuration syntax and add pillar config back in
+
+  * 9b5318f Move old cloud syntax to "Legacy" cloud config doc
+
+- **PR** `#22445`_: (*rallytime*) Add docs explaing file_map upload functionality
+  @ *2015-04-08T01:34:55Z*
+
+  - **ISSUE** `#19044`_: (*whiteinge*) Document the file_map addition to salt-cloud
+  - **PR** `#16886`_: (*techhat*) Add file_map to salt.utils.cloud.bootstrap-enabled providers
+    | refs: `#22445`_
+  * d7b1f14 Merge pull request `#22445`_ from rallytime/`fix-19044`_
+  * 7a9ce92 Add docs explaing file_map upload functionality
+
+- **PR** `#22426`_: (*jraby*) don't repeat the "if ret['changes']" condition
+  @ *2015-04-07T21:42:39Z*
+
+  * ade2474 Merge pull request `#22426`_ from jraby/patch-1
+  * e2aa538 don't repeat the "if ret['changes']" condition
+
+- **PR** `#22416`_: (*rallytime*) Backport `#21044`_ to 2014.7
+  @ *2015-04-07T21:19:32Z*
+
+  - **PR** `#21044`_: (*cachedout*) TCP keepalives on the ret side
+    | refs: `#22416`_
+  * 4c8d351 Merge pull request `#22416`_ from rallytime/`bp-21044`_
+  * 7dd4b61 TCP keepalives on the ret side
+
+- **PR** `#22433`_: (*rallytime*) Clarify that an sls is not available on a fileserver
+  @ *2015-04-07T20:36:10Z*
+
+  - **ISSUE** `#22218`_: (*Seldaek*) Error reporting on masterless gitfs includes is misleading
+    | refs: `#22433`_
+  * f76c5b4 Merge pull request `#22433`_ from rallytime/`fix-22218`_
+  * f22f4dc Clarify that an sls is not available on a fileserver
+
+- **PR** `#22434`_: (*rallytime*) Backport `#22414`_ to 2014.7
+  @ *2015-04-07T20:34:57Z*
+
+  - **ISSUE** `#22382`_: (*ghost*) The 'proxmox' cloud provider alias, for the 'proxmox' driver, does not define the function 'disk'". 
+    | refs: `#22414`_
+  - **PR** `#22414`_: (*syphernl*) Cloud: Do not look for disk underneath config in Proxmox driver
+    | refs: `#22434`_
+  * 70ba52f Merge pull request `#22434`_ from rallytime/`bp-22414`_
+  * 4a141c0 Lint
+
+  * 09e9b6e Do not look for disk underneath config
+
+- **PR** `#22400`_: (*jfindlay*) adding cmd.run state integration tests
+  @ *2015-04-07T13:40:09Z*
+
+  * 28630b4 Merge pull request `#22400`_ from jfindlay/cmd_state_tests
+  * 56364ff adding cmd.run state integration tests
+
+- **PR** `#22395`_: (*twangboy*) Fixed problem with pip not working on portable install
+  @ *2015-04-07T04:09:22Z*
+
+  * 38482a5 Merge pull request `#22395`_ from twangboy/port_pip
+  * b71602a Update BuildSalt.bat
+
+  * 4a3a8b4 Update BuildSalt.bat
+
+  * ba1d396 Update BuildSalt.bat
+
+  * 8e8b4fb Update BuildSalt.bat
+
+  * c898b95 Fixed problem with pip not working on portable install
+
+- **PR** `#22379`_: (*anlutro*) Improve output when using iptables.save
+  @ *2015-04-06T15:11:34Z*
+
+  * 66442a7 Merge pull request `#22379`_ from alprs/feature-iptables-improved_save_output
+  * 568e1b7 Improve output when using iptables.save
+
+- **PR** `#22365`_: (*s0undt3ch*) Include `unless` in the state internal keywords.
+  | refs: `#22621`_
+  @ *2015-04-06T14:01:26Z*
+
+  - **ISSUE** `#22359`_: (*kiorky*) unless is not recognized as a state internal keyword
+    | refs: `#22365`_
+  * 2ac741b Merge pull request `#22365`_ from s0undt3ch/2014.7
+  * ff4aa5b Include `unless` in the state internal keywords.
+
+  * 287bce3 Add `fun` and `state` to the runtime internal keywords listing
+
+- **PR** `#22374`_: (*anlutro*) Corrected output for iptables rule saved to file
+  @ *2015-04-05T22:15:43Z*
+
+  * 16eb18e Merge pull request `#22374`_ from alprs/fix-iptables-saved_rule_to
+  * bd1ff37 Corrected output for iptables rule saved to file
+
+- **PR** `#22372`_: (*anlutro*) iptables needs `-m state` for `--state` arguments
+  @ *2015-04-05T19:57:39Z*
+
+  * 9410c1f Merge pull request `#22372`_ from alprs/fix-iptables-missing_state_flag
+  * 1452082 iptables needs `-m state` for `--state` arguments
+
+- **PR** `#22368`_: (*anlutro*) Make iptables module build_rules accept protocol as an alias for proto
+  @ *2015-04-05T15:57:55Z*
+
+  * 5d3dc7a Merge pull request `#22368`_ from alprs/fix-iptables_proto_protocol_alias
+  * b62d76a Make iptables module build_rules accept protocol as an alias for proto
+
+- **PR** `#22349`_: (*cro*) Backport 22005 to 2014.7
+  @ *2015-04-04T02:03:32Z*
+
+  - **PR** `#22005`_: (*cro*) Add ability to eAuth against Active Directory
+    | refs: `#22349`_
+  * a60579b Merge pull request `#22349`_ from cro/`bp-22005`_
+  * 936254c Lint
+
+  * bcc3772 Change many 'warn' to 'error' to help users with LDAP auth.
+
+  * c0b9cda Take cachedout's suggestion
+
+  * 06d7616 Add authentication against Active Directory
+
+  * ade0430 Add authentication against Active Directory
+
+- **PR** `#22345`_: (*rallytime*) Document list_node* functions for salt cloud
+  @ *2015-04-03T22:34:02Z*
+
+  - **ISSUE** `#22328`_: (*rallytime*) Document list_nodes functions in salt-cloud feature matrix
+    | refs: `#22345`_
+  * 72f708a Merge pull request `#22345`_ from rallytime/document_list_nodes
+  * eac4c63 Add list_node docs to Cloud Function page
+
+  * bf31daa Add Feature Matrix link to cloud action and function pages
+
+  * d5fa02d Add list_node* functions to feature matrix
+
+- **PR** `#22341`_: (*basepi*) [2014.7] Fix some salt-ssh issues with Fedora 21
+  @ *2015-04-03T21:47:21Z*
+
+  * 8de6726 Merge pull request `#22341`_ from basepi/salt-ssh.requests.symlink.plus.some.other.stuff
+  * 1452e9c Backport salt.client.ssh.shell fixes from 2015.2
+
+  * 73ba75e Backport some salt-vt stuff
+
+  * 2de50bc Follow symlinks (mostly because of requests' stupidity)
+
+- **PR** `#22337`_: (*rallytime*) Backport `#22245`_ to 2014.7
+  @ *2015-04-03T20:13:48Z*
+
+  - **ISSUE** `#14888`_: (*djs52*) grains.get_or_set_hash  broken for multiple entries under the same key
+    | refs: `#22245`_
+  - **PR** `#22245`_: (*achernev*) Fix grains.get_or_set_hash to work with multiple entries under same key
+    | refs: `#22337`_
+  * f892335 Merge pull request `#22337`_ from rallytime/`bp-22245`_
+  * f560056 Fix grains.get_or_set_hash to work with multiple entries under same key
+
+- **PR** `#22311`_: (*twangboy*) Win install
+  @ *2015-04-03T13:09:29Z*
+
+  * 1be785e Merge pull request `#22311`_ from twangboy/win_install
+  * 51370ab Removed dialog box that was used for testing
+
+  * 7377c50 Add switches for passing version to nsi script
+
+- **PR** `#22300`_: (*rallytime*) Add windows package installers to docs
+  @ *2015-04-02T23:45:38Z*
+
+  * 4281cd6 Merge pull request `#22300`_ from rallytime/windows_release_docs
+  * 1abaacd Add windows package installers to docs
+
+- **PR** `#22308`_: (*whiteinge*) Better explanations and more examples of how the Reactor calls functions
+  @ *2015-04-02T23:21:19Z*
+
+  - **ISSUE** `#20841`_: (*paha*) Passing arguments to runner from reactor/sls is broken?
+    | refs: `#22121`_ `#22308`_
+  * 8558542 Merge pull request `#22308`_ from whiteinge/doc-reactor-what-where-how
+  * a8bdc17 Better explanations and more examples of how the Reactor calls functions
+
+- **PR** `#22266`_: (*twangboy*) Win install fix
+  @ *2015-04-02T18:59:31Z*
+
+  * 4d0ea7a Merge pull request `#22266`_ from twangboy/win_install_fix
+  * 41a96d4 Fixed hard coded version
+
+  * 82b2f3e Removed message_box i left in for testing I'm an idiot
+
+- **PR** `#22288`_: (*nshalman*) SmartOS Esky: pkgsrc 2014Q4 Build Environment
+  @ *2015-04-02T18:52:38Z*
+
+  * 2bb9760 Merge pull request `#22288`_ from nshalman/smartos-pkgsrc2014Q4
+  * a51a90c SmartOS Esky: pkgsrc 2014Q4 Build Environment
+
+- **PR** `#22280`_: (*s0undt3ch*) Don't pass `ex_config_drive` to libcloud unless it's explicitly enabled
+  @ *2015-04-02T15:28:34Z*
+
+  - **ISSUE** `#19923`_: (*diegows*) config_drive should not be a required option
+    | refs: `#22280`_
+  * f474860 Merge pull request `#22280`_ from s0undt3ch/issues/19923-rackspace-config-drive
+  * 65e5bac Pass it to libcloud if the user has set it in the configuration, True, or False.
+
+  * 23e7354 Don't pass `ex_config_drive` to libcloud unless it's explicitly enabled
+
+- **PR** `#22256`_: (*twangboy*) Fixed pip.install for windows
+  @ *2015-04-01T19:02:13Z*
+
+  * 5129f21 Merge pull request `#22256`_ from twangboy/fix_pip_install
+  * 3792ea1 Fixed pip.install for windows
+
+- **PR** `#22126`_: (*s0undt3ch*) Update environment variables.
+  @ *2015-04-01T16:41:10Z*
+
+  * 3001b72 Merge pull request `#22126`_ from s0undt3ch/2014.7
+  * 9649339 Update environment variables.
+
+- **PR** `#22025`_: (*tjstansell*) fix `#21397`_ - force glibc to re-read resolv.conf
+  @ *2015-04-01T16:37:17Z*
+
+  - **ISSUE** `#21397`_: (*tjstansell*) salt-minion getaddrinfo in dns_check() never gets updated nameservers because of glibc caching
+    | refs: `#22025`_
+  * 47f542d Merge pull request `#22025`_ from tjstansell/`fix-21397`_
+  * 7d5ce28 add appropriate exception types we might expect
+
+  * 9aa36dc fix whitespace - replace tabs with spaces
+
+  * f6a81da fix `#21397`_ - force glibc to re-read resolv.conf
+
+- **PR** `#22235`_: (*dhs-rec*) Possible fix for 'puppet.run always returns 0 `#20850`_'
+  @ *2015-04-01T15:16:28Z*
+
+  - **ISSUE** `#20850`_: (*br0ch0n*) puppet.run always returns 0
+    | refs: `#22235`_
+  * 7d57a76 Merge pull request `#22235`_ from dhs-rec/2014.7
+  * 9c8f5f8 - Change default Puppet agent args to just 'test', which includes the former ones plus 'detailed-exitcodes'. - Exit properly depending on those detailed exit codes.
+
+- **PR** `#22206`_: (*s0undt3ch*) more pylint disables
+  @ *2015-04-01T14:59:38Z*
+
+  * 63919a3 Merge pull request `#22206`_ from s0undt3ch/hotfix/pep8-disables
+  * 30cf5f4 Update to the new disable alias
+
+  * ca615cd Ignore `W1202` (logging-format-interpolation)
+
+  * a1586ef Ignore `E8731` - do not assign a lambda expression, use a def
+
+- **PR** `#22222`_: (*twangboy*) Fixed problem with nested directories
+  @ *2015-04-01T14:08:05Z*
+
+  * 9ab3d5e Merge pull request `#22222`_ from twangboy/fix_installer
+  * 8615e8d Fixed problem with nested directories
+
+- **PR** `#22228`_: (*garethgreenaway*) backporting `#22226`_ to 2014.7
+  @ *2015-04-01T03:56:23Z*
+
+  - **ISSUE** `#20107`_: (*belvedere-trading*) minion scheduling via pillar does not get applied some times
+    | refs: `#22226`_
+  - **PR** `#22226`_: (*garethgreenaway*) Fixes to scheduler
+    | refs: `#22228`_
+  * c8378ff Merge pull request `#22228`_ from garethgreenaway/20107_2014_7_scheduler_race_condition
+  * 2019935 backporting `#22226`_ to 2014.7
+
+- **PR** `#22205`_: (*twangboy*) Removed _tkinter.lib
+  @ *2015-03-31T20:59:23Z*
+
+  * 8b726e3 Merge pull request `#22205`_ from twangboy/win_install
+  * 8644383 Removed _tkinter.lib
+
+- **PR** `#22183`_: (*s0undt3ch*) Disable PEP8 E402(E8402). Module level import not at top of file.
+  @ *2015-03-31T12:14:01Z*
+
+  * 73aa39d Merge pull request `#22183`_ from s0undt3ch/hotfix/pep8-disables
+  * 38f95ec Disable PEP8 E402(E8402). Module level import not at top of file.
+
+- **PR** `#22168`_: (*semarj*) fix cas behavior on data module
+  @ *2015-03-30T22:45:19Z*
+
+  * cf9b1f6 Merge pull request `#22168`_ from semarj/fix-data-cas
+  * a5b28ad fix tests return value
+
+  * 95aa351 fix cas behavior on data module
+
+- **PR** `#22161`_: (*rallytime*) Backport `#21959`_ to 2014.7
+  @ *2015-03-30T19:49:35Z*
+
+  - **ISSUE** `#21956`_: (*giannello*) Reactor rendering error
+    | refs: `#21959`_
+  - **PR** `#21959`_: (*giannello*) Changed argument name
+    | refs: `#22161`_
+  * d941579 Merge pull request `#22161`_ from rallytime/`bp-21959`_
+  * b9d55bc Changed argument name
+
+- **PR** `#22160`_: (*rallytime*) Backport `#22134`_ to 2014.7
+  @ *2015-03-30T19:49:20Z*
+
+  - **ISSUE** `#9960`_: (*jeteokeeffe*) salt virt.query errors out
+  - **PR** `#22134`_: (*zboody*) Fixes `#9960`_
+    | refs: `#22160`_
+  * 9bf6f50 Merge pull request `#22160`_ from rallytime/`bp-22134`_
+  * 061d085 Fixes `#9960`_
+
+- **PR** `#22156`_: (*amendlik*) Fix arguments passed to chef-solo command
+  @ *2015-03-30T18:25:52Z*
+
+  - **ISSUE** `#21997`_: (*scaissie*) chef.solo IndexError: list index out of range
+    | refs: `#22156`_
+  * f44b1d0 Merge pull request `#22156`_ from amendlik/chef-solo-fix
+  * 11536f6 Fix arguments passed to chef-solo command
+
+- **PR** `#22121`_: (*tjstansell*) fix `#20841`_: add sls name from reactor
+  @ *2015-03-30T16:27:42Z*
+
+  - **ISSUE** `#20841`_: (*paha*) Passing arguments to runner from reactor/sls is broken?
+    | refs: `#22121`_ `#22308`_
+  * 36eca12 Merge pull request `#22121`_ from tjstansell/`fix-20841`_
+  * b2b554a fix `#20841`_: add sls name from reactor
+
+- **PR** `#22122`_: (*tjstansell*) backport `#20166`_ to 2014.7
+  @ *2015-03-30T16:06:23Z*
+
+  - **PR** `#20166`_: (*cachedout*) Catch all exceptions in reactor
+    | refs: `#22122`_
+  * 4176c85 Merge pull request `#22122`_ from tjstansell/`bp-20166`_
+  * 6750480 backport `#20166`_ to 2014.7
+
+
+.. _`#11341`: https://github.com/saltstack/salt/issues/11341
+.. _`#12480`: https://github.com/saltstack/salt/issues/12480
+.. _`#14888`: https://github.com/saltstack/salt/issues/14888
+.. _`#15833`: https://github.com/saltstack/salt/issues/15833
+.. _`#16508`: https://github.com/saltstack/salt/issues/16508
+.. _`#16886`: https://github.com/saltstack/salt/pull/16886
+.. _`#17948`: https://github.com/saltstack/salt/issues/17948
+.. _`#18358`: https://github.com/saltstack/salt/issues/18358
+.. _`#18846`: https://github.com/saltstack/salt/pull/18846
+.. _`#19044`: https://github.com/saltstack/salt/issues/19044
+.. _`#19450`: https://github.com/saltstack/salt/issues/19450
+.. _`#19737`: https://github.com/saltstack/salt/issues/19737
+.. _`#19923`: https://github.com/saltstack/salt/issues/19923
+.. _`#20095`: https://github.com/saltstack/salt/pull/20095
+.. _`#20107`: https://github.com/saltstack/salt/issues/20107
+.. _`#20166`: https://github.com/saltstack/salt/pull/20166
+.. _`#20420`: https://github.com/saltstack/salt/issues/20420
+.. _`#20841`: https://github.com/saltstack/salt/issues/20841
+.. _`#20850`: https://github.com/saltstack/salt/issues/20850
+.. _`#21044`: https://github.com/saltstack/salt/pull/21044
+.. _`#21120`: https://github.com/saltstack/salt/issues/21120
+.. _`#21133`: https://github.com/saltstack/salt/issues/21133
+.. _`#21164`: https://github.com/saltstack/salt/pull/21164
+.. _`#21397`: https://github.com/saltstack/salt/issues/21397
+.. _`#21910`: https://github.com/saltstack/salt/issues/21910
+.. _`#21956`: https://github.com/saltstack/salt/issues/21956
+.. _`#21959`: https://github.com/saltstack/salt/pull/21959
+.. _`#21997`: https://github.com/saltstack/salt/issues/21997
+.. _`#21998`: https://github.com/saltstack/salt/issues/21998
+.. _`#22005`: https://github.com/saltstack/salt/pull/22005
+.. _`#22025`: https://github.com/saltstack/salt/pull/22025
+.. _`#22115`: https://github.com/saltstack/salt/pull/22115
+.. _`#22121`: https://github.com/saltstack/salt/pull/22121
+.. _`#22122`: https://github.com/saltstack/salt/pull/22122
+.. _`#22126`: https://github.com/saltstack/salt/pull/22126
+.. _`#22134`: https://github.com/saltstack/salt/pull/22134
+.. _`#22156`: https://github.com/saltstack/salt/pull/22156
+.. _`#22160`: https://github.com/saltstack/salt/pull/22160
+.. _`#22161`: https://github.com/saltstack/salt/pull/22161
+.. _`#22168`: https://github.com/saltstack/salt/pull/22168
+.. _`#22183`: https://github.com/saltstack/salt/pull/22183
+.. _`#22205`: https://github.com/saltstack/salt/pull/22205
+.. _`#22206`: https://github.com/saltstack/salt/pull/22206
+.. _`#22218`: https://github.com/saltstack/salt/issues/22218
+.. _`#22222`: https://github.com/saltstack/salt/pull/22222
+.. _`#22226`: https://github.com/saltstack/salt/pull/22226
+.. _`#22228`: https://github.com/saltstack/salt/pull/22228
+.. _`#22235`: https://github.com/saltstack/salt/pull/22235
+.. _`#22239`: https://github.com/saltstack/salt/issues/22239
+.. _`#22245`: https://github.com/saltstack/salt/pull/22245
+.. _`#22256`: https://github.com/saltstack/salt/pull/22256
+.. _`#22266`: https://github.com/saltstack/salt/pull/22266
+.. _`#22280`: https://github.com/saltstack/salt/pull/22280
+.. _`#22288`: https://github.com/saltstack/salt/pull/22288
+.. _`#22300`: https://github.com/saltstack/salt/pull/22300
+.. _`#22308`: https://github.com/saltstack/salt/pull/22308
+.. _`#22311`: https://github.com/saltstack/salt/pull/22311
+.. _`#22321`: https://github.com/saltstack/salt/issues/22321
+.. _`#22328`: https://github.com/saltstack/salt/issues/22328
+.. _`#22329`: https://github.com/saltstack/salt/issues/22329
+.. _`#22337`: https://github.com/saltstack/salt/pull/22337
+.. _`#22341`: https://github.com/saltstack/salt/pull/22341
+.. _`#22345`: https://github.com/saltstack/salt/pull/22345
+.. _`#22349`: https://github.com/saltstack/salt/pull/22349
+.. _`#22350`: https://github.com/saltstack/salt/pull/22350
+.. _`#22359`: https://github.com/saltstack/salt/issues/22359
+.. _`#22362`: https://github.com/saltstack/salt/pull/22362
+.. _`#22365`: https://github.com/saltstack/salt/pull/22365
+.. _`#22368`: https://github.com/saltstack/salt/pull/22368
+.. _`#22372`: https://github.com/saltstack/salt/pull/22372
+.. _`#22374`: https://github.com/saltstack/salt/pull/22374
+.. _`#22379`: https://github.com/saltstack/salt/pull/22379
+.. _`#22381`: https://github.com/saltstack/salt/pull/22381
+.. _`#22382`: https://github.com/saltstack/salt/issues/22382
+.. _`#22395`: https://github.com/saltstack/salt/pull/22395
+.. _`#22400`: https://github.com/saltstack/salt/pull/22400
+.. _`#22403`: https://github.com/saltstack/salt/pull/22403
+.. _`#22414`: https://github.com/saltstack/salt/pull/22414
+.. _`#22416`: https://github.com/saltstack/salt/pull/22416
+.. _`#22426`: https://github.com/saltstack/salt/pull/22426
+.. _`#22433`: https://github.com/saltstack/salt/pull/22433
+.. _`#22434`: https://github.com/saltstack/salt/pull/22434
+.. _`#22445`: https://github.com/saltstack/salt/pull/22445
+.. _`#22446`: https://github.com/saltstack/salt/pull/22446
+.. _`#22448`: https://github.com/saltstack/salt/pull/22448
+.. _`#22463`: https://github.com/saltstack/salt/issues/22463
+.. _`#22464`: https://github.com/saltstack/salt/pull/22464
+.. _`#22466`: https://github.com/saltstack/salt/pull/22466
+.. _`#22472`: https://github.com/saltstack/salt/issues/22472
+.. _`#22473`: https://github.com/saltstack/salt/pull/22473
+.. _`#22476`: https://github.com/saltstack/salt/pull/22476
+.. _`#22477`: https://github.com/saltstack/salt/pull/22477
+.. _`#22484`: https://github.com/saltstack/salt/pull/22484
+.. _`#22485`: https://github.com/saltstack/salt/pull/22485
+.. _`#22492`: https://github.com/saltstack/salt/pull/22492
+.. _`#22506`: https://github.com/saltstack/salt/pull/22506
+.. _`#22511`: https://github.com/saltstack/salt/pull/22511
+.. _`#22517`: https://github.com/saltstack/salt/pull/22517
+.. _`#22521`: https://github.com/saltstack/salt/pull/22521
+.. _`#22523`: https://github.com/saltstack/salt/pull/22523
+.. _`#22526`: https://github.com/saltstack/salt/pull/22526
+.. _`#22532`: https://github.com/saltstack/salt/pull/22532
+.. _`#22534`: https://github.com/saltstack/salt/issues/22534
+.. _`#22535`: https://github.com/saltstack/salt/pull/22535
+.. _`#22541`: https://github.com/saltstack/salt/issues/22541
+.. _`#22542`: https://github.com/saltstack/salt/pull/22542
+.. _`#22553`: https://github.com/saltstack/salt/pull/22553
+.. _`#22563`: https://github.com/saltstack/salt/pull/22563
+.. _`#22565`: https://github.com/saltstack/salt/pull/22565
+.. _`#22576`: https://github.com/saltstack/salt/pull/22576
+.. _`#22584`: https://github.com/saltstack/salt/pull/22584
+.. _`#22597`: https://github.com/saltstack/salt/pull/22597
+.. _`#22608`: https://github.com/saltstack/salt/pull/22608
+.. _`#22610`: https://github.com/saltstack/salt/pull/22610
+.. _`#22621`: https://github.com/saltstack/salt/pull/22621
+.. _`#22623`: https://github.com/saltstack/salt/pull/22623
+.. _`#22624`: https://github.com/saltstack/salt/pull/22624
+.. _`#22625`: https://github.com/saltstack/salt/pull/22625
+.. _`#22638`: https://github.com/saltstack/salt/issues/22638
+.. _`#22643`: https://github.com/saltstack/salt/pull/22643
+.. _`#22656`: https://github.com/saltstack/salt/pull/22656
+.. _`#22666`: https://github.com/saltstack/salt/pull/22666
+.. _`#22674`: https://github.com/saltstack/salt/pull/22674
+.. _`#22676`: https://github.com/saltstack/salt/issues/22676
+.. _`#22688`: https://github.com/saltstack/salt/pull/22688
+.. _`#22693`: https://github.com/saltstack/salt/pull/22693
+.. _`#22716`: https://github.com/saltstack/salt/pull/22716
+.. _`#22740`: https://github.com/saltstack/salt/issues/22740
+.. _`#22748`: https://github.com/saltstack/salt/pull/22748
+.. _`#22754`: https://github.com/saltstack/salt/pull/22754
+.. _`#9960`: https://github.com/saltstack/salt/issues/9960
+.. _`bp-18846`: https://github.com/saltstack/salt/pull/18846
+.. _`bp-20095`: https://github.com/saltstack/salt/pull/20095
+.. _`bp-20166`: https://github.com/saltstack/salt/pull/20166
+.. _`bp-21044`: https://github.com/saltstack/salt/pull/21044
+.. _`bp-21959`: https://github.com/saltstack/salt/pull/21959
+.. _`bp-22005`: https://github.com/saltstack/salt/pull/22005
+.. _`bp-22134`: https://github.com/saltstack/salt/pull/22134
+.. _`bp-22245`: https://github.com/saltstack/salt/pull/22245
+.. _`bp-22362`: https://github.com/saltstack/salt/pull/22362
+.. _`bp-22414`: https://github.com/saltstack/salt/pull/22414
+.. _`bp-22565`: https://github.com/saltstack/salt/pull/22565
+.. _`bp-22624`: https://github.com/saltstack/salt/pull/22624
+.. _`fix-19044`: https://github.com/saltstack/salt/issues/19044
+.. _`fix-20841`: https://github.com/saltstack/salt/issues/20841
+.. _`fix-21397`: https://github.com/saltstack/salt/issues/21397
+.. _`fix-21998`: https://github.com/saltstack/salt/issues/21998
+.. _`fix-22218`: https://github.com/saltstack/salt/issues/22218
+.. _`fix-22472`: https://github.com/saltstack/salt/issues/22472
+.. _`fix-22534`: https://github.com/saltstack/salt/issues/22534
+.. _`fix-22541`: https://github.com/saltstack/salt/issues/22541

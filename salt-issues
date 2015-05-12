@@ -1,0 +1,283 @@
+#!/usr/bin/perl
+#
+# after updating your local git clone, run something like this:
+#
+#   salt-issues v2014.7.4..v2014.7.5
+#
+
+use JSON::PP;
+use Data::Dumper;
+use Storable qw(store retrieve dclone);
+
+# Create a user agent object
+use LWP::UserAgent;
+use LWP::ConnCache;
+my $ua = LWP::UserAgent->new;
+$ua->agent("salt-issues/0.1 ");
+$ua->ssl_opts(verify_hostname => 0);
+$ua->conn_cache(LWP::ConnCache->new());
+
+$| = 1;
+binmode STDOUT, ":encoding(UTF-8)";
+my $token = $ENV{'GITHUB_TOKEN'} || die("Must set GITHUB_TOKEN");
+my $cachefile = $ENV{'GITHUB_CACHE'} || "$ENV{'HOME'}/.issue-cache";
+my $issue_url = "https://api.github.com/repos/saltstack/salt/issues";
+my $args = join(' ', @ARGV);
+my $cmd = "git log --graph --topo-order --oneline -s $args";
+my $issuere = qr/((#|bp-|fix-)(\d+))/;
+my $out = qx#$cmd#;
+my %allissues = ();
+my %from = ();
+my $issues = 0;
+my $pr = 0;
+my $merges = 0;
+
+print STDERR "** START: $args\n\n";
+
+my $cache = {};
+unless (-s $cachefile) {
+    store $cache, $cachefile;
+}
+$cache = retrieve($cachefile);
+my $unsaved = 0;
+#print ".. code-block:: bash\n\n";
+printf STDERR "Got %d cached issues\n", scalar %$cache;
+while ($out =~ m/$issuere/g) {
+    $allissues{$3} = 1;
+}
+
+# query all of the issues
+check_issues(\%allissues);
+
+if ($unsaved) {
+    print STDERR "    saving cache\n";
+    store $cache, $cachefile;
+}
+
+# now go backwards, but in order, showing all of the changes
+# this way we can group all of the ISSUES/PR together for a
+# set of changes
+my %i = ();
+my %links = ();
+my @result = ();
+my $foundfirstmerge = 0;
+foreach my $line (reverse split(/\n/, $out)) {
+    if ($line =~ /Merge pull request/) {
+        $merges++;
+        $foundfirstmerge = 1;
+    }
+    unless ($foundfirstmerge) {
+        # first few commits are actually part of merge, but do not show that
+        # way in --graph view.  We fix that here.
+        # * Merge ...      =>    * Merge ...
+        # * commit 1       =>      * commit 1
+        # * commit 2       =>      * commit 2
+        $line = "  $line";
+    }
+    my @p = split(/\s+/, $line);
+    my $prefix = '';
+    if ($line =~ s/^([^a-z0-9]+)//) {
+        $prefix = $1;
+        $prefix =~ s/\*.*/* /;
+        $prefix =~ s/[^*]/ /g;
+        $line = "  " . $prefix . $line;
+        $prefix =~ s/\S/ /g;
+    }
+    while ($line =~ m/$issuere/g) {
+        # look for any issue/PRs
+        $i{$3} = 1;
+    }
+    if ($line =~ /^  \* (.*)/) {
+        my $m = $1;
+        my $this = '';
+        if ($m =~ /pull request #(\d+)/) {
+            $this = $1;
+            push(@result, $line);
+        }
+
+        # look for all of the chained entries
+        my @refs = grep { $_ ne $this } walk_issues(keys %i);
+        push(@refs, $this) if $this;
+        foreach my $i (@refs) {
+            my $line = format_issue($i);
+            chomp $line;
+            my $prefix = ($i eq $this) ? "" : "  ";
+            if ($i eq $this) {
+                push(@result, "\n");
+                #$line = join(" ", $allissues{$i}->{'closed_at'}, $line) if exists $allissues{$i}->{'closed_at'};
+                push(@result, "$prefix  @ *" . $allissues{$i}->{'closed_at'} . "*\n") if exists $allissues{$i}->{'closed_at'};
+            }
+            if (exists $from{$i}) {
+                my $l = join(" ", map { "#$_" } @{$from{$i}});
+                push(@result, "$prefix  | refs: $l\n");
+            }
+            push(@result, "$prefix- $line\n");
+            #$line = "=> $line" unless $i eq $this;
+            #push(@result, "- $line\n");
+        }
+
+        unless ($this) {
+            push(@result, "\n");
+            push(@result, "* $m\n");
+        }
+        push(@result, "\n");
+        %i = ();
+    } elsif ($line =~ /\*/) {
+        $line =~ s/^  //;
+        push(@result, "$line\n");
+        push(@result, "\n");
+    }
+#    while ($line =~ m/$issuere/g) {
+#        show_issue($2, $prefix, length($p[0]));
+#    }
+}
+foreach my $line (reverse @result) {
+    $issues++ if $line =~ /ISSUE/;
+    $pr++ if $line =~ /PR/;
+    $line =~ s/$issuere/&linkify($1,$3)/ge;
+    $line =~ s/\\/\\\\/g;
+}
+print "\nChanges for $args\n";
+print "------------" . '-' x length($args) . "\n\n";
+my $date = gmtime();
+print "*Generated at: $date*\n\n";
+print "Statistics:\n\n";
+print "- Total Merges: **$merges**\n";
+print "- Total Issue references: **$issues**\n";
+print "- Total PR references: **$pr**\n";
+print "\n";
+print "Changes:\n\n";
+print join('', reverse @result);
+print "\n\n";
+foreach (sort keys %links) {
+    my $type = (exists $allissues{$links{$_}}->{'pull_request'}) ? "pull" : "issues";
+    print ".. _`$_`: https://github.com/saltstack/salt/$type/$links{$_}\n";
+}
+
+sub walk_issues {
+    my @list = @_;
+    my @res = ();
+    foreach my $i (@list) {
+        push(@res, $i);
+        push(@res, walk_issues(keys %{$allissues{$i}->{'more'}}));
+    }
+    return uniq(@res);
+}
+
+# unique and then sort by type (PR first, then ISSUES)
+sub uniq {
+    my %seen;
+    sort {
+        my $aa = sprintf "%09d",$a;
+        my $bb = sprintf "%09d",$b;
+        (exists $allissues{$a}->{'pull_request'} ? "1-$aa" : "2-$aa") cmp
+        (exists $allissues{$b}->{'pull_request'} ? "1-$bb" : "2-$bb")
+    } grep { !$seen{$_}++ } @_;
+}
+
+sub show_issue {
+    my ($num, $prefix, $indent) = @_;
+    $indent = 0 unless $indent;
+    my @result = ();
+    foreach my $m (keys %{$allissues{$num}->{'more'}}) {
+        push(@result, show_issue($m, $prefix, $indent+2) . " FROM #$m");
+    }
+    my $delim = "`--";
+    my $issue = format_issue($num);
+    push(@result, join('', $prefix, ' ' x $indent, $delim));
+    return @result;
+}
+
+sub format_issue {
+    my $num = shift;
+    my $type = exists $allissues{$num}->{'pull_request'} ? "**PR**" : "**ISSUE**";
+    my $labels = get_labels($allissues{$num});
+    #return sprintf("%s%s [%s]: (%s) %s%s\n", $type, $num, uc($allissues{$num}->{'state'}),$allissues{$num}->{'user'}->{'login'}, $allissues{$num}->{'title'}, $labels);
+    return sprintf("%s #%s: (*%s*) %s%s\n", $type, $num, $allissues{$num}->{'user'}->{'login'}, $allissues{$num}->{'title'}, ''); #$labels);
+}
+
+sub get_labels {
+    my $issue = shift;
+    return unless exists $issue->{'labels'};
+    return " **LABELS** " . join(', ', map { "*" . $_->{'name'} . "*" } @{$issue->{'labels'}});
+}
+
+sub check_issues {
+    my $issues = shift;
+    my @issues = sort keys %$issues;
+
+    my %more = ();
+    printf STDERR "querying %d issues:\n", scalar @issues;
+    foreach my $number (@issues) {
+        #print "-- $number: ";
+        my $d = &get_github_issue($number);
+        my $type = exists $d->{'pull_request'} ? "PR" : "ISSUE";
+        $d->{'desc'} = sprintf "($type) %s", $d->{'title'};
+        $d->{'more'} = {};
+        $allissues{$number} = $d;
+        if ($type eq 'PR') {
+            while ($d->{"body"} =~ m/$issuere/g) {
+                $allissues{$number}->{'more'}->{$3} = $number;
+                if (exists $from{$3}) {
+                    push(@{$from{$3}}, $number);
+                } else {
+                    my @i = ($number);
+                    $from{$3} = \@i;
+                }
+                unless (exists $allissues{$3} or $more{$3}) {
+                    $allissues{$3} = 1;
+                    $more{$3} = $number;
+                    #print "   found new reference to #$2\n";
+                    print STDERR "+";
+                }
+            }
+        }
+    }
+    print STDERR "\n";
+    if (%more) {
+        check_issues(\%more);
+    }
+}
+
+sub get_github_issue {
+    my $number = shift;
+
+    # check our cache first
+    if (ref $cache eq "HASH" and exists $cache->{$number}) {
+        print STDERR ",";
+        return $cache->{$number};
+    }
+    print STDERR ".";
+
+    #print "GET $issue_url/$number\n";
+    # Create a request
+    my $req = HTTP::Request->new(GET => "$issue_url/$number");
+    $req->header(Authorization => "token $token");
+    #print "DEBUG:", $req;
+
+    # Pass request to the user agent and get a response back
+    my $res = $ua->request($req);
+
+    # Check the outcome of the response
+    if ($res->is_success) {
+        my $json = JSON::PP->new->utf8->decode($res->content);
+        $unsaved++;
+        $cache->{$number} = &dclone($json);
+        if ($unsaved eq 20) {
+            print STDERR "s";
+            store $cache, $cachefile;
+            $unsaved = 0;
+        }
+        return $json;
+    }
+    else {
+        print STDERR "ERROR fetching issues #$number:", $res->status_line, "\n";
+        return undef;
+    }
+}
+
+sub linkify {
+    my ($i, $n) = @_;
+    $links{$i} = $n;
+    return "`$i`_";
+}

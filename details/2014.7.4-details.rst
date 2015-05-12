@@ -1,0 +1,163 @@
+
+Changes for v2014.7.3..v2014.7.4
+--------------------------------
+
+*Generated at: Tue May  5 21:13:32 2015*
+
+Statistics:
+
+- Total Merges: **17**
+- Total Issue references: **4**
+- Total PR references: **18**
+
+Changes:
+
+
+- **PR** `#22145`_: (*twangboy*) Remove .chm files from windows build
+  @ *2015-03-30T15:26:47Z*
+
+  * 1440ffa Merge pull request `#22145`_ from twangboy/winbuild
+  * 110b0ef Remove .chm files from windows build
+
+- **PR** `#22130`_: (*terminalmage*) Fix typo in docker.get_container_root
+  @ *2015-03-29T20:25:55Z*
+
+  * f2ecac1 Merge pull request `#22130`_ from terminalmage/fix-dockerio-typo
+  * 0dd8d04 Fix typo in docker.get_container_root
+
+- **PR** `#22113`_: (*borgstrom*) Fix a bug with the implicit list handling in pyobjects requisites
+  @ *2015-03-28T17:21:51Z*
+
+  * 2a7404b Merge pull request `#22113`_ from borgstrom/pyobjects-req-issue-2014.7
+  * 181df2e Fix a bug with the implicit list handling in pyobjects requisites
+
+- **PR** `#22109`_: (*twangboy*) Pull minion config settings from minion conf
+  @ *2015-03-28T17:18:45Z*
+
+  * f0b78e2 Merge pull request `#22109`_ from twangboy/win_install_ini
+  * de85a03 Pull minion config settings from minion conf
+
+- **PR** `#22074`_: (*borgstrom*) Fix requisites missing from pyobjects that were introduced in 2014.7
+  @ *2015-03-27T18:51:07Z*
+
+  - **ISSUE** `#20652`_: (*tomashavlas*) pyobjects renderer doesn't support onchanges/onfail requisites
+    | refs: `#22074`_
+  * 6e5d0b4 Merge pull request `#22074`_ from borgstrom/pyobjects-reqs-2014.7
+  * 761eb5f Fix missing requisites that were introduced in 2014.7
+
+- **PR** `#22077`_: (*ticosax*) states.docker: fix docstring
+  @ *2015-03-27T14:15:25Z*
+
+  * 5a0f056 Merge pull request `#22077`_ from ticosax/fix-doc-string
+  * 6b96491 fix docstring
+
+- **PR** `#22053`_: (*basepi*) [2014.7] Don't use function call for default argument in chef.py
+  @ *2015-03-26T18:54:32Z*
+
+  * 3423ec4 Merge pull request `#22053`_ from basepi/fixchef
+  * 63648b4 Fix the lint
+
+  * 89b9cc6 Don't use function call for default argument
+
+- **PR** `#22051`_: (*twangboy*) Fixed wmi issue
+  @ *2015-03-26T18:36:39Z*
+
+  * b636dbb Merge pull request `#22051`_ from twangboy/2014.7
+  * c46fced Fixed wmi issue
+
+- **PR** `#22042`_: (*basepi*) [2014.7] Add 2014.7.4 release notes
+  @ *2015-03-26T15:04:00Z*
+
+  * ddc7ceb Merge pull request `#22042`_ from basepi/2014.7.4releasenotes
+  * 74dcd7d Add 2014.7.4 release notes
+
+- **PR** `#22035`_: (*0xf10e*) Icehouse Keystone may raise AuthorizationFailure instead of Unauthorized
+  @ *2015-03-26T15:03:28Z*
+
+  * ba0044d Merge pull request `#22035`_ from 0xf10e/patch-1
+  * 4d7fc7b Icehouse Keystone may raise AuthorizationFailure instead of Unauthorized
+
+- **PR** `#22020`_: (*UtahDave*) fix bug where can't restart salt-minion
+  @ *2015-03-26T15:01:44Z*
+
+  - **ISSUE** `#21961`_: (*polliard*) SaltStack win_service.py:restart(name) kills the salt-minion on windows
+    | refs: `#22020`_
+  * b3b6f94 Merge pull request `#22020`_ from UtahDave/2014.7local
+  * 49188a0 fix bug where can't restart salt-minion
+
+- **PR** `#22007`_: (*twangboy*) Checks for existing installation and prompts to remove
+  @ *2015-03-26T14:31:10Z*
+
+  * 516e10f Merge pull request `#22007`_ from twangboy/win_installer
+  * 2605223 Update Salt-Minion-Setup.nsi
+
+  * 9579bb2 Update Salt-Minion-Setup.nsi
+
+  * d3cb6dd Accounted for silent install
+
+  * 6bfe6fd Checks for existing installation and prompts to remove
+
+- **PR** `#22012`_: (*basepi*) [2014.7] Create randomized logfile name in windows for chef.py
+  @ *2015-03-26T14:30:22Z*
+
+  * f8e130f Merge pull request `#22012`_ from basepi/tmpfile-chef
+  * 22d2f7a Use cachedir
+
+  * b49d0d4 Create randomized logfile name in windows for chef.py
+
+- **PR** `#22022`_: (*garethgreenaway*) more fixes to mount.py state module
+  @ *2015-03-26T02:34:48Z*
+
+  - **ISSUE** `#21992`_: (*tlemarchand*) mount.mounted of tmpfs bind error
+    | refs: `#22022`_
+  * decd53b Merge pull request `#22022`_ from garethgreenaway/21992_2014_7_tmpfs_bind_mount
+  * 0060764 Fixing issues when using tmpfs and bind mounts.
+
+- **PR** `#22016`_: (*basepi*) [2014.7] Move install.sh to cachedir for serverdensity_device
+  @ *2015-03-26T02:25:17Z*
+
+  * 51c662b Merge pull request `#22016`_ from basepi/tmpfile-serverdensity_device
+  * e11298d Move install.sh to cachedir for serverdensity_device
+
+- **PR** `#22015`_: (*rallytime*) Backport `#21947`_ to 2014.7
+  @ *2015-03-25T21:59:09Z*
+
+  - **PR** `#21947`_: (*dmyerscough*) Ensure nginx config check passes by checking the exit status
+    | refs: `#22015`_
+  * e9c9f9d Merge pull request `#22015`_ from rallytime/`bp-21947`_
+  * ccf457c Ensure nginx config check passes by checking the exit status.... Nginx writes messages to stderr even when there are no errors
+
+- **PR** `#22014`_: (*garethgreenaway*) Fixes to mount.py state module
+  @ *2015-03-25T21:58:35Z*
+
+  - **ISSUE** `#21888`_: (*eliasp*) `salt.states.mount` - using LABEL=foo as 'device' leads to constant remounts
+    | refs: `#22014`_
+  * f689782 Merge pull request `#22014`_ from garethgreenaway/21888_2014_7_mount_label_remount_madness
+  * 93f0c20 We do not have to lower() the label.
+
+  * 98aaf35 Adding some code to be able to properly handle the situation when disk labels are being used for the device.
+
+
+.. _`#20652`: https://github.com/saltstack/salt/issues/20652
+.. _`#21888`: https://github.com/saltstack/salt/issues/21888
+.. _`#21947`: https://github.com/saltstack/salt/pull/21947
+.. _`#21961`: https://github.com/saltstack/salt/issues/21961
+.. _`#21992`: https://github.com/saltstack/salt/issues/21992
+.. _`#22007`: https://github.com/saltstack/salt/pull/22007
+.. _`#22012`: https://github.com/saltstack/salt/pull/22012
+.. _`#22014`: https://github.com/saltstack/salt/pull/22014
+.. _`#22015`: https://github.com/saltstack/salt/pull/22015
+.. _`#22016`: https://github.com/saltstack/salt/pull/22016
+.. _`#22020`: https://github.com/saltstack/salt/pull/22020
+.. _`#22022`: https://github.com/saltstack/salt/pull/22022
+.. _`#22035`: https://github.com/saltstack/salt/pull/22035
+.. _`#22042`: https://github.com/saltstack/salt/pull/22042
+.. _`#22051`: https://github.com/saltstack/salt/pull/22051
+.. _`#22053`: https://github.com/saltstack/salt/pull/22053
+.. _`#22074`: https://github.com/saltstack/salt/pull/22074
+.. _`#22077`: https://github.com/saltstack/salt/pull/22077
+.. _`#22109`: https://github.com/saltstack/salt/pull/22109
+.. _`#22113`: https://github.com/saltstack/salt/pull/22113
+.. _`#22130`: https://github.com/saltstack/salt/pull/22130
+.. _`#22145`: https://github.com/saltstack/salt/pull/22145
+.. _`bp-21947`: https://github.com/saltstack/salt/pull/21947
