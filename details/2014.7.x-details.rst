@@ -2,16 +2,30 @@
 Changes for v2014.7.6..upstream/2014.7
 --------------------------------------
 
-*Generated at: Tue May 19 14:08:00 2015*
+*Generated at: Wed May 20 04:42:44 2015*
 
 Statistics:
 
-- Total Merges: **4**
-- Total Issue references: **1**
-- Total PR references: **5**
+- Total Merges: **6**
+- Total Issue references: **2**
+- Total PR references: **7**
 
 Changes:
 
+
+- **PR** `#23939`_: (*basepi*) Add extended changelog to 2014.7.6 release notes
+  @ *2015-05-19T21:21:00Z*
+
+  * 9133912 Merge pull request `#23939`_ from basepi/v2014.7.6release
+  * 32b65dc Add extended changelog to 2014.7.6 release notes
+
+- **PR** `#23881`_: (*garethgreenaway*) Fixes to schedule module in 2014.7
+  @ *2015-05-19T15:46:30Z*
+
+  - **ISSUE** `#23820`_: (*UtahDave*) 2014.7.5 schedule error
+    | refs: `#23881`_
+  * 0031ca2 Merge pull request `#23881`_ from garethgreenaway/23820_2014_7_schedule_list_issue
+  * b207f2a Missing continue in the list function when deleting unused attributes.
 
 - **PR** `#23887`_: (*basepi*) [2014.7] Bring salt-ssh pillar.get in line with mainline pillar.get
   @ *2015-05-18T23:11:34Z*
@@ -43,9 +57,12 @@ Changes:
 
 
 .. _`#22131`: https://github.com/saltstack/salt/issues/22131
+.. _`#23820`: https://github.com/saltstack/salt/issues/23820
 .. _`#23848`: https://github.com/saltstack/salt/pull/23848
 .. _`#23871`: https://github.com/saltstack/salt/pull/23871
+.. _`#23881`: https://github.com/saltstack/salt/pull/23881
 .. _`#23887`: https://github.com/saltstack/salt/pull/23887
 .. _`#23888`: https://github.com/saltstack/salt/pull/23888
 .. _`#23891`: https://github.com/saltstack/salt/pull/23891
+.. _`#23939`: https://github.com/saltstack/salt/pull/23939
 .. _`bp-23848`: https://github.com/saltstack/salt/pull/23848
