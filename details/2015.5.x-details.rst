@@ -2,16 +2,36 @@
 Changes for v2015.5.0..upstream/2015.5
 --------------------------------------
 
-*Generated at: Wed May 20 20:21:53 2015*
+*Generated at: Wed May 20 23:51:47 2015*
 
 Statistics:
 
-- Total Merges: **202**
-- Total Issue references: **58**
-- Total PR references: **258**
+- Total Merges: **205**
+- Total Issue references: **59**
+- Total PR references: **261**
 
 Changes:
 
+
+- **PR** `#23996`_: (*neogenix*) iptables state generates a 0 position which is invalid in iptables cli `#23950`_
+  @ *2015-05-20T22:44:27Z*
+
+  - **ISSUE** `#23950`_: (*neogenix*) iptables state generates a 0 position which is invalid in iptables cli
+    | refs: `#23996`_
+  * 17b7c0b Merge pull request `#23996`_ from neogenix/2015.5-23950
+  * ad417a5 fix for `#23950`_
+
+- **PR** `#23994`_: (*rallytime*) Skip the gpodder pkgrepo test for Ubuntu 15 - they don't have vivid ppa up yet
+  @ *2015-05-20T21:18:21Z*
+
+  * 4cb8773 Merge pull request `#23994`_ from rallytime/skip_test_ubuntu_15
+  * 9e0ec07 Skip the gpodder pkgrepo test - they don't have vivid ppa up yet
+
+- **PR** `#23998`_: (*rallytime*) Update release note for 2015.5.1
+  @ *2015-05-20T20:58:55Z*
+
+  * 2422760 Merge pull request `#23998`_ from rallytime/release_notes
+  * 113c604 Update release note for 2015.5.1
 
 - **PR** `#23989`_: (*rallytime*) Backport `#23980`_ to 2015.5
   @ *2015-05-20T19:33:41Z*
@@ -1967,6 +1987,7 @@ Changes:
 .. _`#23942`: https://github.com/saltstack/salt/pull/23942
 .. _`#23944`: https://github.com/saltstack/salt/pull/23944
 .. _`#23948`: https://github.com/saltstack/salt/pull/23948
+.. _`#23950`: https://github.com/saltstack/salt/issues/23950
 .. _`#23951`: https://github.com/saltstack/salt/pull/23951
 .. _`#23955`: https://github.com/saltstack/salt/pull/23955
 .. _`#23956`: https://github.com/saltstack/salt/pull/23956
@@ -1984,6 +2005,9 @@ Changes:
 .. _`#23986`: https://github.com/saltstack/salt/pull/23986
 .. _`#23988`: https://github.com/saltstack/salt/pull/23988
 .. _`#23989`: https://github.com/saltstack/salt/pull/23989
+.. _`#23994`: https://github.com/saltstack/salt/pull/23994
+.. _`#23996`: https://github.com/saltstack/salt/pull/23996
+.. _`#23998`: https://github.com/saltstack/salt/pull/23998
 .. _`#504`: https://github.com/saltstack/salt/pull/504
 .. _`#552`: https://github.com/saltstack/salt/issues/552
 .. _`#560`: https://github.com/saltstack/salt/pull/560
