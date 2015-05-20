@@ -2,16 +2,91 @@
 Changes for v2015.5.0..upstream/2015.5
 --------------------------------------
 
-*Generated at: Wed May 20 04:40:00 2015*
+*Generated at: Wed May 20 20:21:53 2015*
 
 Statistics:
 
-- Total Merges: **191**
-- Total Issue references: **57**
-- Total PR references: **245**
+- Total Merges: **202**
+- Total Issue references: **58**
+- Total PR references: **258**
 
 Changes:
 
+
+- **PR** `#23989`_: (*rallytime*) Backport `#23980`_ to 2015.5
+  @ *2015-05-20T19:33:41Z*
+
+  - **PR** `#23980`_: (*iggy*) template: jinja2 -> jinja
+    | refs: `#23989`_
+  * 117ecb1 Merge pull request `#23989`_ from rallytime/`bp-23980`_
+  * 8f8557c template: jinja2 -> jinja
+
+- **PR** `#23988`_: (*rallytime*) Backport `#23977`_ to 2015.5
+  @ *2015-05-20T19:13:36Z*
+
+  - **PR** `#23977`_: (*ionutbalutoiu*) Fixed glance image_create
+    | refs: `#23988`_
+  * d4f1ba0 Merge pull request `#23988`_ from rallytime/`bp-23977`_
+  * 46fc7c6 Fixed glance image_create
+
+- **PR** `#23986`_: (*basepi*) [2015.5] Merge forward from 2014.7 to 2015.5
+  @ *2015-05-20T18:41:33Z*
+
+  - **PR** `#23965`_: (*hvnsweeting*) handle all exceptions gitpython can raise
+  * 9566e7d Merge pull request `#23986`_ from basepi/merge-forward-2015.5
+  * 0b78156 Merge remote-tracking branch 'upstream/2014.7' into merge-forward-2015.5
+
+    * 314e4db Merge pull request `#23965`_ from hvnsweeting/20147-fix-gitfs-gitpython-exception
+
+      * 2576301 handle all exception gitpython can raise
+
+- **PR** `#23985`_: (*UtahDave*) Add 2014.7.5-2 and 2015.5.0-2 Windows installer download links
+  @ *2015-05-20T18:32:44Z*
+
+  * 9d1130e Merge pull request `#23985`_ from UtahDave/2015.5local
+  * 10338d0 Add links to Windows 2015.5.0-2 install downloads
+
+  * b84f975 updated Windows 2014.7.5-2 installer download link
+
+- **PR** `#23983`_: (*rallytime*) Versionadded tags for https_user and https_pass args new in 2015.5.0
+  @ *2015-05-20T18:05:27Z*
+
+  * ca7729d Merge pull request `#23983`_ from rallytime/versionadded_git_options
+  * 14eae22 Versionadded tags for https_user and https_pass args new in 2015.5.0
+
+- **PR** `#23970`_: (*jayeshka*) adding system unit test case
+  @ *2015-05-20T17:12:57Z*
+
+  * b06df57 Merge pull request `#23970`_ from jayeshka/system-unit-test
+  * 89eb008 adding system unit test case
+
+- **PR** `#23967`_: (*jayeshka*) adding states/memcached unit test case
+  @ *2015-05-20T17:12:26Z*
+
+  * 38d5f75 Merge pull request `#23967`_ from jayeshka/memcached-states-unit-test
+  * 8ef9240 adding states/memcached unit test case
+
+- **PR** `#23966`_: (*jayeshka*) adding states/modjk unit test case
+  @ *2015-05-20T17:11:48Z*
+
+  * 868e807 Merge pull request `#23966`_ from jayeshka/modjk-states-unit-test
+  * 422a964 adding states/modjk unit test case
+
+- **PR** `#23942`_: (*jacobhammons*) Updates to sphinx saltstack2 doc theme
+  @ *2015-05-20T15:43:54Z*
+
+  * 6316490 Merge pull request `#23942`_ from jacobhammons/2015.5
+  * 31023c8 Updates to sphinx saltstack2 doc theme
+
+- **PR** `#23874`_: (*joejulian*) Validate keyword arguments to be valid
+  @ *2015-05-20T04:53:40Z*
+
+  - **ISSUE** `#23872`_: (*joejulian*) create_ca_signed_cert can error if dereferenced dict is used for args
+    | refs: `#23874`_
+  * 587957b Merge pull request `#23874`_ from joejulian/2015.5_tls_validate_kwargs
+  * 30102ac Fix py3 and ordering inconsistency problems.
+
+  * 493f7ad Validate keyword arguments to be valid
 
 - **PR** `#23960`_: (*rallytime*) Backport `#22114`_ to 2015.5
   @ *2015-05-20T04:37:09Z*
@@ -1860,6 +1935,8 @@ Changes:
 .. _`#23866`: https://github.com/saltstack/salt/pull/23866
 .. _`#23868`: https://github.com/saltstack/salt/pull/23868
 .. _`#23871`: https://github.com/saltstack/salt/pull/23871
+.. _`#23872`: https://github.com/saltstack/salt/issues/23872
+.. _`#23874`: https://github.com/saltstack/salt/pull/23874
 .. _`#23875`: https://github.com/saltstack/salt/pull/23875
 .. _`#23876`: https://github.com/saltstack/salt/pull/23876
 .. _`#23880`: https://github.com/saltstack/salt/pull/23880
@@ -1887,6 +1964,7 @@ Changes:
 .. _`#23932`: https://github.com/saltstack/salt/pull/23932
 .. _`#23939`: https://github.com/saltstack/salt/pull/23939
 .. _`#23940`: https://github.com/saltstack/salt/pull/23940
+.. _`#23942`: https://github.com/saltstack/salt/pull/23942
 .. _`#23944`: https://github.com/saltstack/salt/pull/23944
 .. _`#23948`: https://github.com/saltstack/salt/pull/23948
 .. _`#23951`: https://github.com/saltstack/salt/pull/23951
@@ -1895,6 +1973,17 @@ Changes:
 .. _`#23957`: https://github.com/saltstack/salt/pull/23957
 .. _`#23960`: https://github.com/saltstack/salt/pull/23960
 .. _`#23961`: https://github.com/saltstack/salt/pull/23961
+.. _`#23965`: https://github.com/saltstack/salt/pull/23965
+.. _`#23966`: https://github.com/saltstack/salt/pull/23966
+.. _`#23967`: https://github.com/saltstack/salt/pull/23967
+.. _`#23970`: https://github.com/saltstack/salt/pull/23970
+.. _`#23977`: https://github.com/saltstack/salt/pull/23977
+.. _`#23980`: https://github.com/saltstack/salt/pull/23980
+.. _`#23983`: https://github.com/saltstack/salt/pull/23983
+.. _`#23985`: https://github.com/saltstack/salt/pull/23985
+.. _`#23986`: https://github.com/saltstack/salt/pull/23986
+.. _`#23988`: https://github.com/saltstack/salt/pull/23988
+.. _`#23989`: https://github.com/saltstack/salt/pull/23989
 .. _`#504`: https://github.com/saltstack/salt/pull/504
 .. _`#552`: https://github.com/saltstack/salt/issues/552
 .. _`#560`: https://github.com/saltstack/salt/pull/560
@@ -1930,3 +2019,5 @@ Changes:
 .. _`bp-23908`: https://github.com/saltstack/salt/pull/23908
 .. _`bp-23944`: https://github.com/saltstack/salt/pull/23944
 .. _`bp-23951`: https://github.com/saltstack/salt/pull/23951
+.. _`bp-23977`: https://github.com/saltstack/salt/pull/23977
+.. _`bp-23980`: https://github.com/saltstack/salt/pull/23980
