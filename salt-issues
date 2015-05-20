@@ -31,6 +31,7 @@ my %from = ();
 my $issues = 0;
 my $pr = 0;
 my $merges = 0;
+my $debug = 0;
 
 print STDERR "** START: $args\n\n";
 
@@ -61,7 +62,11 @@ my %i = ();
 my %links = ();
 my @result = ();
 my $foundfirstmerge = 0;
+debug(sprintf("%d lines", scalar split(/\n/, $out)));
+my $l = 0;
 foreach my $line (reverse split(/\n/, $out)) {
+    $l++;
+    debug("line $l: $line");
     if ($line =~ /Merge pull request/) {
         $merges++;
         $foundfirstmerge = 1;
@@ -96,7 +101,7 @@ foreach my $line (reverse split(/\n/, $out)) {
         }
 
         # look for all of the chained entries
-        my @refs = grep { $_ ne $this } walk_issues(keys %i);
+        my @refs = grep { $_ ne $this } walk_issues(undef, keys %i);
         push(@refs, $this) if $this;
         foreach my $i (@refs) {
             my $line = format_issue($i);
@@ -155,12 +160,40 @@ foreach (sort keys %links) {
 }
 
 sub walk_issues {
-    my @list = @_;
-    my @res = ();
-    foreach my $i (@list) {
-        push(@res, $i);
-        push(@res, walk_issues(keys %{$allissues{$i}->{'more'}}));
+    my ($seen, @list) = @_;
+    $seen = {} unless ref $seen eq "HASH";
+    $seen->{'levels'} = 0 unless exists $seen->{'levels'};
+    if ($seen->{'levels'} == 0) {
+        debug("start of new walk_issues: " . join(",", keys %{$seen}));
+        $seen = {};
     }
+    $seen->{'levels'}++;
+    if ($seen->{'levels'} > 10) {
+        debug("too many levels");
+        return;
+    }
+    my @res = ();
+    my $l = $seen->{'levels'};
+    my $p = "walk_issues [$l]";
+    debug("$p @list");
+    my @more = ();
+    foreach my $i (@list) {
+        # skip this if we've already seen it to prevent circular loops
+        debug("$p i have seen $i already") if exists $seen->{$i};
+        push(@res, $i);
+        $seen->{$i} = 1;
+        #my @more = grep { ! exists $seen->{$_} } keys %{$allissues{$i}->{'more'}};
+        my @m = keys %{$allissues{$i}->{'more'}};
+        debug("$p added $i with more = @m");
+        push(@more, @m);
+    }
+    debug("$p more = @more; seen = " . join(",",(keys %{$seen})));
+    @more = grep { ! exists $seen->{$_} } uniq(@more);
+    if (@more) {
+        debug("$p processing: @more");
+        push(@res, walk_issues($seen, @more));
+    }
+    $seen->{'levels'}--;
     return uniq(@res);
 }
 
@@ -235,6 +268,7 @@ sub check_issues {
     }
     print STDERR "\n";
     if (%more) {
+        debug("checking more issues");
         check_issues(\%more);
     }
 }
@@ -280,4 +314,9 @@ sub linkify {
     my ($i, $n) = @_;
     $links{$i} = $n;
     return "`$i`_";
+}
+
+sub debug {
+    my $msg = shift;
+    print STDERR "DEBUG: $msg\n" if $debug;
 }
