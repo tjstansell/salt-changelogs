@@ -2,16 +2,38 @@
 Changes for v2015.5.0..upstream/2015.5
 --------------------------------------
 
-*Generated at: Wed May 20 04:24:36 2015*
+*Generated at: Wed May 20 04:40:00 2015*
 
 Statistics:
 
-- Total Merges: **189**
+- Total Merges: **191**
 - Total Issue references: **57**
-- Total PR references: **241**
+- Total PR references: **245**
 
 Changes:
 
+
+- **PR** `#23960`_: (*rallytime*) Backport `#22114`_ to 2015.5
+  @ *2015-05-20T04:37:09Z*
+
+  - **PR** `#22114`_: (*dmyerscough*) Fixing KeyError when there are no additional pages
+    | refs: `#23960`_
+  * 00c5c22 Merge pull request `#23960`_ from rallytime/`bp-22114`_
+  * f3e1d63 Catch KeyError
+
+  * 306b1ea Fixing KeyError
+
+  * 6b2cda2 Fix PEP8 complaint
+
+  * 239e50f Fixing KeyError when there are no additional pages
+
+- **PR** `#23961`_: (*rallytime*) Backport `#23944`_ to 2015.5
+  @ *2015-05-20T04:35:41Z*
+
+  - **PR** `#23944`_: (*ryan-lane*) Add missing loginclass argument to _changes call
+    | refs: `#23961`_
+  * 4648b46 Merge pull request `#23961`_ from rallytime/`bp-23944`_
+  * 970d19a Add missing loginclass argument to _changes call
 
 - **PR** `#23948`_: (*jfindlay*) augeas.change state now returns changes as a dict
   @ *2015-05-20T04:00:10Z*
@@ -1598,6 +1620,7 @@ Changes:
 .. _`#21469`: https://github.com/saltstack/salt/pull/21469
 .. _`#21487`: https://github.com/saltstack/salt/pull/21487
 .. _`#21603`: https://github.com/saltstack/salt/issues/21603
+.. _`#22114`: https://github.com/saltstack/salt/pull/22114
 .. _`#22131`: https://github.com/saltstack/salt/issues/22131
 .. _`#22141`: https://github.com/saltstack/salt/issues/22141
 .. _`#22332`: https://github.com/saltstack/salt/issues/22332
@@ -1864,11 +1887,14 @@ Changes:
 .. _`#23932`: https://github.com/saltstack/salt/pull/23932
 .. _`#23939`: https://github.com/saltstack/salt/pull/23939
 .. _`#23940`: https://github.com/saltstack/salt/pull/23940
+.. _`#23944`: https://github.com/saltstack/salt/pull/23944
 .. _`#23948`: https://github.com/saltstack/salt/pull/23948
 .. _`#23951`: https://github.com/saltstack/salt/pull/23951
 .. _`#23955`: https://github.com/saltstack/salt/pull/23955
 .. _`#23956`: https://github.com/saltstack/salt/pull/23956
 .. _`#23957`: https://github.com/saltstack/salt/pull/23957
+.. _`#23960`: https://github.com/saltstack/salt/pull/23960
+.. _`#23961`: https://github.com/saltstack/salt/pull/23961
 .. _`#504`: https://github.com/saltstack/salt/pull/504
 .. _`#552`: https://github.com/saltstack/salt/issues/552
 .. _`#560`: https://github.com/saltstack/salt/pull/560
@@ -1877,6 +1903,7 @@ Changes:
 .. _`#580`: https://github.com/saltstack/salt/issues/580
 .. _`#589`: https://github.com/saltstack/salt/pull/589
 .. _`bp-19305`: https://github.com/saltstack/salt/pull/19305
+.. _`bp-22114`: https://github.com/saltstack/salt/pull/22114
 .. _`bp-23346`: https://github.com/saltstack/salt/pull/23346
 .. _`bp-23367`: https://github.com/saltstack/salt/pull/23367
 .. _`bp-23389`: https://github.com/saltstack/salt/pull/23389
@@ -1901,4 +1928,5 @@ Changes:
 .. _`bp-23880`: https://github.com/saltstack/salt/pull/23880
 .. _`bp-23906`: https://github.com/saltstack/salt/pull/23906
 .. _`bp-23908`: https://github.com/saltstack/salt/pull/23908
+.. _`bp-23944`: https://github.com/saltstack/salt/pull/23944
 .. _`bp-23951`: https://github.com/saltstack/salt/pull/23951
