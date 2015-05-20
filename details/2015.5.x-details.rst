@@ -2,16 +2,204 @@
 Changes for v2015.5.0..upstream/2015.5
 --------------------------------------
 
-*Generated at: Tue May 19 17:08:42 2015*
+*Generated at: Wed May 20 04:21:57 2015*
 
 Statistics:
 
-- Total Merges: **171**
-- Total Issue references: **43**
-- Total PR references: **212**
+- Total Merges: **189**
+- Total Issue references: **57**
+- Total PR references: **241**
 
 Changes:
 
+
+- **PR** `#23948`_: (*jfindlay*) augeas.change state now returns changes as a dict
+  @ *2015-05-20T04:00:10Z*
+
+  * 0cb5cd3 Merge pull request `#23948`_ from jfindlay/augeas_changes
+  * f09b80a augeas.change state now returns changes as a dict
+
+- **PR** `#23957`_: (*rallytime*) Backport `#23951`_ to 2015.5
+  @ *2015-05-20T03:04:24Z*
+
+  - **PR** `#23951`_: (*ryan-lane*) Do not check perms in file.copy if preserve
+    | refs: `#23957`_
+  * 2d185f7 Merge pull request `#23957`_ from rallytime/`bp-23951`_
+  * 996b431 Update file.py
+
+  * 85d461f Do not check perms in file.copy if preserve
+
+- **PR** `#23956`_: (*rallytime*) Backport `#23906`_ to 2015.5
+  @ *2015-05-20T03:04:14Z*
+
+  - **ISSUE** `#23839`_: (*gladiatr72*) wonky loader syndrome
+    | refs: `#23906`_
+  - **ISSUE** `#23373`_: (*tnypex*) reactor/orchestrate race condition on salt['pillar.get']
+    | refs: `#23906`_
+  - **PR** `#23906`_: (*gladiatr72*) Added exception handler to trap the RuntimeError raised when
+    | refs: `#23956`_
+  * ebff1ff Merge pull request `#23956`_ from rallytime/`bp-23906`_
+  * 9d87fd3 add proper marker for format argument
+
+  * 197688e Added exception handler to trap the RuntimeError raised when Depends.enforce_dependency() class method fires unsuccessfully. There appears to be no synchronization within the Depends decorator class wrt the class global dependency_dict which results in incomplete population of any loader instantiation occuring at the time of one of these exceptions.
+
+- **PR** `#23955`_: (*rallytime*) Backport `#19305`_ to 2015.5
+  @ *2015-05-20T03:03:55Z*
+
+  - **ISSUE** `#19852`_: (*TaiSHiNet*) DigitalOcean APIv2 can't delete machines when there is only 1 page
+    | refs: `#23955`_
+  - **ISSUE** `#19304`_: (*TaiSHiNet*) DigitalOcean API v2 cannot delete VMs on 2nd page
+    | refs: `#19305`_
+  - **PR** `#19305`_: (*TaiSHiNet*) Fixes droplet listing past page 1
+    | refs: `#23955`_
+  * da3f919 Merge pull request `#23955`_ from rallytime/`bp-19305`_
+  * bbf2429 Fixes droplet listing past page 1
+
+- **PR** `#23940`_: (*basepi*) [2015.5] Merge forward from 2014.7 to 2015.5
+  @ *2015-05-19T22:37:58Z*
+
+  - **ISSUE** `#23820`_: (*UtahDave*) 2014.7.5 schedule error
+    | refs: `#23881`_
+  - **ISSUE** `#22131`_: (*quixoten*) "unexpected keyword argument 'merge'" on 2014.7.2 (salt-ssh)
+    | refs: `#23887`_
+  - **PR** `#23939`_: (*basepi*) Add extended changelog to 2014.7.6 release notes
+  - **PR** `#23887`_: (*basepi*) [2014.7] Bring salt-ssh pillar.get in line with mainline pillar.get
+  - **PR** `#23881`_: (*garethgreenaway*) Fixes to schedule module in 2014.7
+  * 02a78fc Merge pull request `#23940`_ from basepi/merge-forward-2015.5
+  * 36f0065 Merge remote-tracking branch 'upstream/2014.7' into merge-forward-2015.5
+
+    * 9133912 Merge pull request `#23939`_ from basepi/v2014.7.6release
+
+      * 32b65dc Add extended changelog to 2014.7.6 release notes
+
+    * 0031ca2 Merge pull request `#23881`_ from garethgreenaway/23820_2014_7_schedule_list_issue
+
+      * b207f2a Missing continue in the list function when deleting unused attributes.
+
+    * 63bd21e Merge pull request `#23887`_ from basepi/salt-ssh.pillar.get.22131
+
+      * bc84502 Bring salt-ssh pillar.get in line with mainline pillar.get
+
+- **PR** `#23932`_: (*rallytime*) Backport `#23908`_ to 2015.5
+  @ *2015-05-19T21:41:28Z*
+
+  - **PR** `#23908`_: (*nleib*) fix connection function to mongo
+    | refs: `#23932`_
+  * ee4c01b Merge pull request `#23932`_ from rallytime/`bp-23908`_
+  * 5d520c9 fix connection function to mongo
+
+- **PR** `#23931`_: (*rallytime*) Backport `#23880`_ to 2015.5
+  @ *2015-05-19T21:41:18Z*
+
+  - **PR** `#23880`_: (*bastiaanb*) if setting client_config_dir to '~', expand path
+    | refs: `#23931`_
+  * 70bd407 Merge pull request `#23931`_ from rallytime/`bp-23880`_
+  * 8ce59a2 if setting client_config_dir to '~', expand path
+
+- **PR** `#23898`_: (*kiorky*) Lxc profiles
+  | refs: `#23897`_
+  @ *2015-05-19T21:08:28Z*
+
+  - **ISSUE** `#23847`_: (*kiorky*) lxc: systemd containers cant be seeded
+    | refs: `#23806`_ `#23898`_ `#23897`_ `#23808`_
+  - **ISSUE** `#23833`_: (*kiorky*) lxc.set_dns fails intermittently
+    | refs: `#23898`_ `#23807`_ `#23897`_ `#23808`_
+  - **ISSUE** `#23772`_: (*cheuschober*) lxc.init fails to bootstrap container
+    | refs: `#23806`_ `#23898`_ `#23807`_ `#23897`_ `#23808`_
+  - **ISSUE** `#23658`_: (*arthurlogilab*) [salt-cloud lxc] too verbose, shows host: True multiple times when starting
+    | refs: `#23898`_ `#23897`_
+  - **ISSUE** `#23657`_: (*arthurlogilab*) [salt-cloud lxc] NameError: global name '__salt__' is not defined
+    | refs: `#23727`_ `#23898`_ `#23897`_
+  - **PR** `#23897`_: (*kiorky*) Lxc seed and prof ports
+    | refs: `#23898`_
+  - **PR** `#23808`_: (*kiorky*) Lxc seed and prof ports
+    | refs: `#23807`_ `#23897`_
+  - **PR** `#23807`_: (*kiorky*) Lxc profiles
+    | refs: `#23898`_
+  - **PR** `#23806`_: (*kiorky*) Lxc seeding
+    | refs: `#23807`_
+  * 5bdbf0a Merge pull request `#23898`_ from makinacorpus/lxc_profiles
+  * d9051a0 lxc: systemd support
+
+  * e8d674f lxc: chroot fallback toggle
+
+  * e2887a0 lxc: sync func name with develop
+
+  * e96e345 lxc more fixes (lxc.set_dns)
+
+  * fdb6424 lxc: Fix salt config (no more a kwarg)
+
+  * 63e63fa repair salt cloud lxc api on develop
+
+  * 80eabe2 lxc salt cloud doc
+
+  * 73f229d lxc: unificate saltconfig/master/master_port
+
+  * 0bc1f08 lxc: refactor a bit saltcloud/lxc interface
+
+  * 7a80370 lxc: get networkprofile from saltcloud
+
+  * 47acb2e lxc: default net profile has now correct options
+
+  * 7eadf48 lxc: select the appropriate default bridge
+
+- **PR** `#23922`_: (*garethgreenaway*) Fixes to debian_ip.py
+  @ *2015-05-19T18:50:53Z*
+
+  - **ISSUE** `#23900`_: (*hashi825*) salt ubuntu network building issue 2015.5.0
+    | refs: `#23922`_
+  * b818f72 Merge pull request `#23922`_ from garethgreenaway/23900_2015_5_bonding_interface_fixes
+  * 0bba536 Fixing issue reported when using bonded interfaces on Ubuntu.  Attributes should be bond-, but the code was attempting to split just on bond_.  Fix accounts for both, but the debian_ip.py module will write out bond attributes with bond-
+
+- **PR** `#23925`_: (*jpic*) Fixed wrong path in LXC cloud documentation
+  @ *2015-05-19T18:23:56Z*
+
+  - **PR** `#23924`_: (*jpic*) Fixed wrong path in LXC cloud documentation
+    | refs: `#23925`_
+  * b1c98a3 Merge pull request `#23925`_ from jpic/fix/wrong_lxc_path
+  * a4bcd75 Fixed wrong path in LXC cloud documentation
+
+- **PR** `#23894`_: (*whiteinge*) Add __all__ attribute to Mock class for docs
+  @ *2015-05-19T17:17:35Z*
+
+  * 7f6a716 Merge pull request `#23894`_ from whiteinge/doc-mock__all__
+  * 6eeca46 Add __all__ attribute to Mock class for docs
+
+- **PR** `#23884`_: (*jfindlay*) Fix locale.set_locale on debian
+  @ *2015-05-19T15:51:22Z*
+
+  - **ISSUE** `#23767`_: (*chrimi*) Salt system.locale fails on non existent default locale
+    | refs: `#23884`_
+  * 8108a9b Merge pull request `#23884`_ from jfindlay/fix_locale
+  * 91c2d51 use append_if_not_found in locale.set_locale
+
+  * e632603 (re)generate /etc/default/locale
+
+- **PR** `#23866`_: (*jfindlay*) backport `#23834`_, change portage.dep.strip_empty to list comprehension
+  @ *2015-05-19T15:50:43Z*
+
+  - **PR** `#23834`_: (*Arabus*) Avoid deprecation warning from  portage.dep.strip_empty()
+    | refs: `#23866`_
+  * 6bae12f Merge pull request `#23866`_ from jfindlay/flag_strip
+  * aa032cc replace portage.dep.strip_empty() with list comprehension
+
+  * 7576872 Proper replacement for portage.dep.strip_empty() with list comprehension, pep8fix
+
+  * 2851a5c Switch portage.dep.strip_empty(...) to filter(None,...) to avoid deprecation warning and do essentially the same
+
+- **PR** `#23917`_: (*corywright*) Split debian bonding options on dash instead of underscore
+  @ *2015-05-19T15:44:35Z*
+
+  - **ISSUE** `#23904`_: (*mbrgm*) Network config bonding section cannot be parsed when attribute names use dashes
+    | refs: `#23917`_
+  * a67a008 Merge pull request `#23917`_ from corywright/issue23904
+  * c06f8cf Split debian bonding options on dash instead of underscore
+
+- **PR** `#23909`_: (*jayeshka*) 'str' object has no attribute 'capitalized'
+  @ *2015-05-19T15:41:53Z*
+
+  * e8fcd09 Merge pull request `#23909`_ from jayeshka/file-exe-module
+  * e422d9d 'str' object has no attribute 'capitalized'
 
 - **PR** `#23903`_: (*garethgreenaway*) Adding docs for missing schedule state module parameters.
   @ *2015-05-19T06:29:34Z*
@@ -50,12 +238,13 @@ Changes:
   * 16d8a75 saltstack2 sphinx theme and build settings
 
 - **PR** `#23806`_: (*kiorky*) Lxc seeding
+  | refs: `#23807`_
   @ *2015-05-18T23:18:33Z*
 
   - **ISSUE** `#23847`_: (*kiorky*) lxc: systemd containers cant be seeded
-    | refs: `#23806`_
+    | refs: `#23806`_ `#23898`_ `#23897`_ `#23808`_
   - **ISSUE** `#23772`_: (*cheuschober*) lxc.init fails to bootstrap container
-    | refs: `#23806`_
+    | refs: `#23806`_ `#23898`_ `#23807`_ `#23897`_ `#23808`_
   * ff3cc7d Merge pull request `#23806`_ from makinacorpus/lxc_seeding
   * 61b7aad runners/lxc: optim
 
@@ -445,7 +634,7 @@ Changes:
   @ *2015-05-14T18:14:12Z*
 
   - **ISSUE** `#23657`_: (*arthurlogilab*) [salt-cloud lxc] NameError: global name '__salt__' is not defined
-    | refs: `#23727`_
+    | refs: `#23727`_ `#23898`_ `#23897`_
   * cbf4ca8 Merge pull request `#23727`_ from jfindlay/npm_salt
   * 05392f2 fix npm execution module stacktrace
 
@@ -1400,12 +1589,16 @@ Changes:
 .. _`#17245`: https://github.com/saltstack/salt/issues/17245
 .. _`#18368`: https://github.com/saltstack/salt/pull/18368
 .. _`#19114`: https://github.com/saltstack/salt/issues/19114
+.. _`#19304`: https://github.com/saltstack/salt/issues/19304
+.. _`#19305`: https://github.com/saltstack/salt/pull/19305
+.. _`#19852`: https://github.com/saltstack/salt/issues/19852
 .. _`#20198`: https://github.com/saltstack/salt/issues/20198
 .. _`#20518`: https://github.com/saltstack/salt/issues/20518
 .. _`#21355`: https://github.com/saltstack/salt/pull/21355
 .. _`#21469`: https://github.com/saltstack/salt/pull/21469
 .. _`#21487`: https://github.com/saltstack/salt/pull/21487
 .. _`#21603`: https://github.com/saltstack/salt/issues/21603
+.. _`#22131`: https://github.com/saltstack/salt/issues/22131
 .. _`#22141`: https://github.com/saltstack/salt/issues/22141
 .. _`#22332`: https://github.com/saltstack/salt/issues/22332
 .. _`#22742`: https://github.com/saltstack/salt/issues/22742
@@ -1435,6 +1628,7 @@ Changes:
 .. _`#23363`: https://github.com/saltstack/salt/pull/23363
 .. _`#23367`: https://github.com/saltstack/salt/pull/23367
 .. _`#23368`: https://github.com/saltstack/salt/pull/23368
+.. _`#23373`: https://github.com/saltstack/salt/issues/23373
 .. _`#23377`: https://github.com/saltstack/salt/pull/23377
 .. _`#23379`: https://github.com/saltstack/salt/pull/23379
 .. _`#23380`: https://github.com/saltstack/salt/pull/23380
@@ -1560,6 +1754,7 @@ Changes:
 .. _`#23650`: https://github.com/saltstack/salt/pull/23650
 .. _`#23651`: https://github.com/saltstack/salt/pull/23651
 .. _`#23657`: https://github.com/saltstack/salt/issues/23657
+.. _`#23658`: https://github.com/saltstack/salt/issues/23658
 .. _`#23661`: https://github.com/saltstack/salt/pull/23661
 .. _`#23662`: https://github.com/saltstack/salt/pull/23662
 .. _`#23669`: https://github.com/saltstack/salt/pull/23669
@@ -1602,6 +1797,7 @@ Changes:
 .. _`#23760`: https://github.com/saltstack/salt/pull/23760
 .. _`#23765`: https://github.com/saltstack/salt/pull/23765
 .. _`#23766`: https://github.com/saltstack/salt/pull/23766
+.. _`#23767`: https://github.com/saltstack/salt/issues/23767
 .. _`#23769`: https://github.com/saltstack/salt/pull/23769
 .. _`#23770`: https://github.com/saltstack/salt/pull/23770
 .. _`#23772`: https://github.com/saltstack/salt/issues/23772
@@ -1614,16 +1810,22 @@ Changes:
 .. _`#23792`: https://github.com/saltstack/salt/issues/23792
 .. _`#23802`: https://github.com/saltstack/salt/pull/23802
 .. _`#23806`: https://github.com/saltstack/salt/pull/23806
+.. _`#23807`: https://github.com/saltstack/salt/pull/23807
+.. _`#23808`: https://github.com/saltstack/salt/pull/23808
 .. _`#23809`: https://github.com/saltstack/salt/pull/23809
 .. _`#23810`: https://github.com/saltstack/salt/pull/23810
 .. _`#23811`: https://github.com/saltstack/salt/pull/23811
 .. _`#23812`: https://github.com/saltstack/salt/pull/23812
 .. _`#23815`: https://github.com/saltstack/salt/issues/23815
 .. _`#23816`: https://github.com/saltstack/salt/pull/23816
+.. _`#23820`: https://github.com/saltstack/salt/issues/23820
 .. _`#23823`: https://github.com/saltstack/salt/pull/23823
 .. _`#23829`: https://github.com/saltstack/salt/pull/23829
 .. _`#23832`: https://github.com/saltstack/salt/pull/23832
+.. _`#23833`: https://github.com/saltstack/salt/issues/23833
+.. _`#23834`: https://github.com/saltstack/salt/pull/23834
 .. _`#23838`: https://github.com/saltstack/salt/pull/23838
+.. _`#23839`: https://github.com/saltstack/salt/issues/23839
 .. _`#23843`: https://github.com/saltstack/salt/pull/23843
 .. _`#23847`: https://github.com/saltstack/salt/issues/23847
 .. _`#23848`: https://github.com/saltstack/salt/pull/23848
@@ -1632,15 +1834,41 @@ Changes:
 .. _`#23860`: https://github.com/saltstack/salt/pull/23860
 .. _`#23862`: https://github.com/saltstack/salt/pull/23862
 .. _`#23863`: https://github.com/saltstack/salt/pull/23863
+.. _`#23866`: https://github.com/saltstack/salt/pull/23866
 .. _`#23868`: https://github.com/saltstack/salt/pull/23868
 .. _`#23871`: https://github.com/saltstack/salt/pull/23871
 .. _`#23875`: https://github.com/saltstack/salt/pull/23875
 .. _`#23876`: https://github.com/saltstack/salt/pull/23876
+.. _`#23880`: https://github.com/saltstack/salt/pull/23880
+.. _`#23881`: https://github.com/saltstack/salt/pull/23881
 .. _`#23882`: https://github.com/saltstack/salt/pull/23882
+.. _`#23884`: https://github.com/saltstack/salt/pull/23884
+.. _`#23887`: https://github.com/saltstack/salt/pull/23887
 .. _`#23888`: https://github.com/saltstack/salt/pull/23888
 .. _`#23891`: https://github.com/saltstack/salt/pull/23891
 .. _`#23892`: https://github.com/saltstack/salt/pull/23892
+.. _`#23894`: https://github.com/saltstack/salt/pull/23894
+.. _`#23897`: https://github.com/saltstack/salt/pull/23897
+.. _`#23898`: https://github.com/saltstack/salt/pull/23898
+.. _`#23900`: https://github.com/saltstack/salt/issues/23900
 .. _`#23903`: https://github.com/saltstack/salt/pull/23903
+.. _`#23904`: https://github.com/saltstack/salt/issues/23904
+.. _`#23906`: https://github.com/saltstack/salt/pull/23906
+.. _`#23908`: https://github.com/saltstack/salt/pull/23908
+.. _`#23909`: https://github.com/saltstack/salt/pull/23909
+.. _`#23917`: https://github.com/saltstack/salt/pull/23917
+.. _`#23922`: https://github.com/saltstack/salt/pull/23922
+.. _`#23924`: https://github.com/saltstack/salt/pull/23924
+.. _`#23925`: https://github.com/saltstack/salt/pull/23925
+.. _`#23931`: https://github.com/saltstack/salt/pull/23931
+.. _`#23932`: https://github.com/saltstack/salt/pull/23932
+.. _`#23939`: https://github.com/saltstack/salt/pull/23939
+.. _`#23940`: https://github.com/saltstack/salt/pull/23940
+.. _`#23948`: https://github.com/saltstack/salt/pull/23948
+.. _`#23951`: https://github.com/saltstack/salt/pull/23951
+.. _`#23955`: https://github.com/saltstack/salt/pull/23955
+.. _`#23956`: https://github.com/saltstack/salt/pull/23956
+.. _`#23957`: https://github.com/saltstack/salt/pull/23957
 .. _`#504`: https://github.com/saltstack/salt/pull/504
 .. _`#552`: https://github.com/saltstack/salt/issues/552
 .. _`#560`: https://github.com/saltstack/salt/pull/560
@@ -1648,6 +1876,7 @@ Changes:
 .. _`#567`: https://github.com/saltstack/salt/pull/567
 .. _`#580`: https://github.com/saltstack/salt/issues/580
 .. _`#589`: https://github.com/saltstack/salt/pull/589
+.. _`bp-19305`: https://github.com/saltstack/salt/pull/19305
 .. _`bp-23346`: https://github.com/saltstack/salt/pull/23346
 .. _`bp-23367`: https://github.com/saltstack/salt/pull/23367
 .. _`bp-23389`: https://github.com/saltstack/salt/pull/23389
@@ -1669,3 +1898,7 @@ Changes:
 .. _`bp-23790`: https://github.com/saltstack/salt/pull/23790
 .. _`bp-23838`: https://github.com/saltstack/salt/pull/23838
 .. _`bp-23848`: https://github.com/saltstack/salt/pull/23848
+.. _`bp-23880`: https://github.com/saltstack/salt/pull/23880
+.. _`bp-23906`: https://github.com/saltstack/salt/pull/23906
+.. _`bp-23908`: https://github.com/saltstack/salt/pull/23908
+.. _`bp-23951`: https://github.com/saltstack/salt/pull/23951
