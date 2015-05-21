@@ -2,16 +2,74 @@
 Changes for v2015.5.0..upstream/2015.5
 --------------------------------------
 
-*Generated at: Wed May 20 23:51:47 2015*
+*Generated at: 2015-05-21T22:28:16Z*
 
 Statistics:
 
-- Total Merges: **205**
-- Total Issue references: **59**
-- Total PR references: **261**
+- Total Merges: **212**
+- Total Issue references: **62**
+- Total PR references: **268**
 
 Changes:
 
+
+- **PR** `#24001`_: (*msteed*) issue `#23883`_
+  @ *2015-05-21T20:32:30Z*
+
+  - **ISSUE** `#23883`_: (*kaithar*) max_event_size seems broken
+  * ac32000 Merge pull request `#24001`_ from msteed/issue-23883
+  * bea97a8 issue `#23883`_
+
+- **PR** `#23995`_: (*kiorky*) Lxc path pre
+  @ *2015-05-21T17:26:03Z*
+
+  * f7fae26 Merge pull request `#23995`_ from makinacorpus/lxc_path_pre
+  * 319282a lint
+
+  * 1dc67e5 lxc: versionadded
+
+  * fcad7cb lxc: states improvments
+
+  * 644bd72 lxc: more consistence for profiles
+
+  * 139372c lxc: remove merge cruft
+
+  * 725b046 lxc: Repair merge
+
+- **PR** `#24032`_: (*kartiksubbarao*) Update augeas_cfg.py
+  @ *2015-05-21T17:03:42Z*
+
+  - **ISSUE** `#16383`_: (*interjection*) salt.states.augeas.change example from docs fails with exception
+    | refs: `#24032`_
+  * 26d6851 Merge pull request `#24032`_ from kartiksubbarao/augeas_insert_16383
+  * 3686dcd Update augeas_cfg.py
+
+- **PR** `#24025`_: (*jayeshka*) adding timezone unit test case
+  @ *2015-05-21T16:50:53Z*
+
+  * 55c9245 Merge pull request `#24025`_ from jayeshka/timezone-unit-test
+  * 1ec33e2 removed assertion error
+
+  * 16ecb28 adding timezone unit test case
+
+- **PR** `#24023`_: (*jayeshka*) adding states/mongodb_database unit test case
+  @ *2015-05-21T16:49:17Z*
+
+  * e243617 Merge pull request `#24023`_ from jayeshka/mongodb_database-states-unit-test
+  * 5a9ac7e adding states/mongodb_database unit test case
+
+- **PR** `#24022`_: (*jayeshka*) adding states/modjk_worker unit test case
+  @ *2015-05-21T16:48:29Z*
+
+  * b377bd9 Merge pull request `#24022`_ from jayeshka/modjk_worker-states-unit-test
+  * 05c0a98 adding states/modjk_worker unit test case
+
+- **PR** `#24005`_: (*msteed*) issue `#23776`_
+  @ *2015-05-21T01:55:34Z*
+
+  - **ISSUE** `#23776`_: (*enblde*) Presence change events constantly reporting all minions as new in 2015.5
+  * 701c51b Merge pull request `#24005`_ from msteed/issue-23776
+  * 62e67d8 issue `#23776`_
 
 - **PR** `#23996`_: (*neogenix*) iptables state generates a 0 position which is invalid in iptables cli `#23950`_
   @ *2015-05-20T22:44:27Z*
@@ -1702,6 +1760,7 @@ Changes:
   * f9da6db adding riak unit test case
 
 
+.. _`#16383`: https://github.com/saltstack/salt/issues/16383
 .. _`#16424`: https://github.com/saltstack/salt/issues/16424
 .. _`#17245`: https://github.com/saltstack/salt/issues/17245
 .. _`#18368`: https://github.com/saltstack/salt/pull/18368
@@ -1919,6 +1978,7 @@ Changes:
 .. _`#23769`: https://github.com/saltstack/salt/pull/23769
 .. _`#23770`: https://github.com/saltstack/salt/pull/23770
 .. _`#23772`: https://github.com/saltstack/salt/issues/23772
+.. _`#23776`: https://github.com/saltstack/salt/issues/23776
 .. _`#23781`: https://github.com/saltstack/salt/pull/23781
 .. _`#23782`: https://github.com/saltstack/salt/pull/23782
 .. _`#23783`: https://github.com/saltstack/salt/pull/23783
@@ -1962,6 +2022,7 @@ Changes:
 .. _`#23880`: https://github.com/saltstack/salt/pull/23880
 .. _`#23881`: https://github.com/saltstack/salt/pull/23881
 .. _`#23882`: https://github.com/saltstack/salt/pull/23882
+.. _`#23883`: https://github.com/saltstack/salt/issues/23883
 .. _`#23884`: https://github.com/saltstack/salt/pull/23884
 .. _`#23887`: https://github.com/saltstack/salt/pull/23887
 .. _`#23888`: https://github.com/saltstack/salt/pull/23888
@@ -2006,8 +2067,15 @@ Changes:
 .. _`#23988`: https://github.com/saltstack/salt/pull/23988
 .. _`#23989`: https://github.com/saltstack/salt/pull/23989
 .. _`#23994`: https://github.com/saltstack/salt/pull/23994
+.. _`#23995`: https://github.com/saltstack/salt/pull/23995
 .. _`#23996`: https://github.com/saltstack/salt/pull/23996
 .. _`#23998`: https://github.com/saltstack/salt/pull/23998
+.. _`#24001`: https://github.com/saltstack/salt/pull/24001
+.. _`#24005`: https://github.com/saltstack/salt/pull/24005
+.. _`#24022`: https://github.com/saltstack/salt/pull/24022
+.. _`#24023`: https://github.com/saltstack/salt/pull/24023
+.. _`#24025`: https://github.com/saltstack/salt/pull/24025
+.. _`#24032`: https://github.com/saltstack/salt/pull/24032
 .. _`#504`: https://github.com/saltstack/salt/pull/504
 .. _`#552`: https://github.com/saltstack/salt/issues/552
 .. _`#560`: https://github.com/saltstack/salt/pull/560
