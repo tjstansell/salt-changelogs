@@ -2,16 +2,70 @@
 Changes for v2015.5.0..upstream/2015.5
 --------------------------------------
 
-*Generated at: 2015-05-21T22:28:16Z*
+*Generated at: 2015-05-22T15:32:05Z*
 
 Statistics:
 
-- Total Merges: **212**
-- Total Issue references: **62**
-- Total PR references: **268**
+- Total Merges: **219**
+- Total Issue references: **64**
+- Total PR references: **279**
 
 Changes:
 
+
+- **PR** `#24063`_: (*jayeshka*) removed tuple index error
+  @ *2015-05-22T14:58:20Z*
+
+  * 8b69b41 Merge pull request `#24063`_ from jayeshka/mount-states-module
+  * b9745d5 removed tuple index error
+
+- **PR** `#24057`_: (*rallytime*) Backport `#22572`_ to 2015.5
+  @ *2015-05-22T05:36:25Z*
+
+  - **PR** `#22572`_: (*The-Loeki*) Small docfix for GitPillar
+    | refs: `#24057`_
+  * 02ac4aa Merge pull request `#24057`_ from rallytime/`bp-22572`_
+  * 49aad84 Small docfix for GitPillar
+
+- **PR** `#24040`_: (*rallytime*) Backport `#24027`_ to 2015.5
+  @ *2015-05-21T23:43:54Z*
+
+  - **ISSUE** `#23088`_: (*wfhg*) Segfault when adding a Zypper repo on SLES 11.3
+    | refs: `#24027`_
+  - **PR** `#24027`_: (*wfhg*) Add baseurl to salt.modules.zypper.mod_repo
+    | refs: `#24040`_
+  * 82de059 Merge pull request `#24040`_ from rallytime/`bp-24027`_
+  * 37d25d8 Added baseurl as alias for url and mirrorlist in salt.modules.zypper.mod_repo.
+
+- **PR** `#24039`_: (*rallytime*) Backport `#24015`_ to 2015.5
+  @ *2015-05-21T23:43:25Z*
+
+  - **PR** `#24015`_: (*YanChii*) minor improvement of solarisips docs & fix typos
+    | refs: `#24039`_
+  * d909781 Merge pull request `#24039`_ from rallytime/`bp-24015`_
+  * 6bfaa94 minor improovement of solarisips docs & fix typos
+
+- **PR** `#24038`_: (*rallytime*) Backport `#19599`_ to 2015.5
+  @ *2015-05-21T23:43:10Z*
+
+  - **ISSUE** `#19598`_: (*fayetted*) ssh_auth.present test=true incorectly reports changes will be made
+    | refs: `#19599`_
+  - **PR** `#19599`_: (*fayetted*) Fix ssh_auth test mode, compare lines not just key
+    | refs: `#24038`_
+  * 4a0f254 Merge pull request `#24038`_ from rallytime/`bp-19599`_
+  * ea00d3e Fix ssh_auth test mode, compare lines not just key
+
+- **PR** `#24046`_: (*rallytime*) Remove key management test from digital ocean cloud tests
+  @ *2015-05-21T22:32:04Z*
+
+  * 42b87f1 Merge pull request `#24046`_ from rallytime/remove_key_test
+  * 1d031ca Remove key management test from digital ocean cloud tests
+
+- **PR** `#24044`_: (*cro*) Remove spurious log message, fix typo in doc
+  @ *2015-05-21T22:31:49Z*
+
+  * eff54b1 Merge pull request `#24044`_ from cro/pgjsonb
+  * de06633 Remove spurious log message, fix typo in doc
 
 - **PR** `#24001`_: (*msteed*) issue `#23883`_
   @ *2015-05-21T20:32:30Z*
@@ -1767,6 +1821,8 @@ Changes:
 .. _`#19114`: https://github.com/saltstack/salt/issues/19114
 .. _`#19304`: https://github.com/saltstack/salt/issues/19304
 .. _`#19305`: https://github.com/saltstack/salt/pull/19305
+.. _`#19598`: https://github.com/saltstack/salt/issues/19598
+.. _`#19599`: https://github.com/saltstack/salt/pull/19599
 .. _`#19852`: https://github.com/saltstack/salt/issues/19852
 .. _`#20198`: https://github.com/saltstack/salt/issues/20198
 .. _`#20518`: https://github.com/saltstack/salt/issues/20518
@@ -1778,11 +1834,13 @@ Changes:
 .. _`#22131`: https://github.com/saltstack/salt/issues/22131
 .. _`#22141`: https://github.com/saltstack/salt/issues/22141
 .. _`#22332`: https://github.com/saltstack/salt/issues/22332
+.. _`#22572`: https://github.com/saltstack/salt/pull/22572
 .. _`#22742`: https://github.com/saltstack/salt/issues/22742
 .. _`#22908`: https://github.com/saltstack/salt/issues/22908
 .. _`#22959`: https://github.com/saltstack/salt/issues/22959
 .. _`#23004`: https://github.com/saltstack/salt/issues/23004
 .. _`#23026`: https://github.com/saltstack/salt/issues/23026
+.. _`#23088`: https://github.com/saltstack/salt/issues/23088
 .. _`#23110`: https://github.com/saltstack/salt/issues/23110
 .. _`#23159`: https://github.com/saltstack/salt/issues/23159
 .. _`#23188`: https://github.com/saltstack/salt/pull/23188
@@ -2072,10 +2130,19 @@ Changes:
 .. _`#23998`: https://github.com/saltstack/salt/pull/23998
 .. _`#24001`: https://github.com/saltstack/salt/pull/24001
 .. _`#24005`: https://github.com/saltstack/salt/pull/24005
+.. _`#24015`: https://github.com/saltstack/salt/pull/24015
 .. _`#24022`: https://github.com/saltstack/salt/pull/24022
 .. _`#24023`: https://github.com/saltstack/salt/pull/24023
 .. _`#24025`: https://github.com/saltstack/salt/pull/24025
+.. _`#24027`: https://github.com/saltstack/salt/pull/24027
 .. _`#24032`: https://github.com/saltstack/salt/pull/24032
+.. _`#24038`: https://github.com/saltstack/salt/pull/24038
+.. _`#24039`: https://github.com/saltstack/salt/pull/24039
+.. _`#24040`: https://github.com/saltstack/salt/pull/24040
+.. _`#24044`: https://github.com/saltstack/salt/pull/24044
+.. _`#24046`: https://github.com/saltstack/salt/pull/24046
+.. _`#24057`: https://github.com/saltstack/salt/pull/24057
+.. _`#24063`: https://github.com/saltstack/salt/pull/24063
 .. _`#504`: https://github.com/saltstack/salt/pull/504
 .. _`#552`: https://github.com/saltstack/salt/issues/552
 .. _`#560`: https://github.com/saltstack/salt/pull/560
@@ -2084,7 +2151,9 @@ Changes:
 .. _`#580`: https://github.com/saltstack/salt/issues/580
 .. _`#589`: https://github.com/saltstack/salt/pull/589
 .. _`bp-19305`: https://github.com/saltstack/salt/pull/19305
+.. _`bp-19599`: https://github.com/saltstack/salt/pull/19599
 .. _`bp-22114`: https://github.com/saltstack/salt/pull/22114
+.. _`bp-22572`: https://github.com/saltstack/salt/pull/22572
 .. _`bp-23346`: https://github.com/saltstack/salt/pull/23346
 .. _`bp-23367`: https://github.com/saltstack/salt/pull/23367
 .. _`bp-23389`: https://github.com/saltstack/salt/pull/23389
@@ -2113,3 +2182,5 @@ Changes:
 .. _`bp-23951`: https://github.com/saltstack/salt/pull/23951
 .. _`bp-23977`: https://github.com/saltstack/salt/pull/23977
 .. _`bp-23980`: https://github.com/saltstack/salt/pull/23980
+.. _`bp-24015`: https://github.com/saltstack/salt/pull/24015
+.. _`bp-24027`: https://github.com/saltstack/salt/pull/24027
