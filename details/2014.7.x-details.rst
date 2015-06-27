@@ -2,16 +2,207 @@
 Changes for v2014.7.6..upstream/2014.7
 --------------------------------------
 
-*Generated at: Wed May 20 04:42:44 2015*
+*Generated at: 2015-06-27T15:31:23Z*
 
 Statistics:
 
-- Total Merges: **6**
-- Total Issue references: **2**
-- Total PR references: **7**
+- Total Merges: **29**
+- Total Issue references: **11**
+- Total PR references: **37**
 
 Changes:
 
+
+- **PR** `#24944`_: (*techhat*) Double-check main_cloud_config
+  @ *2015-06-25T12:29:55Z*
+
+  - **ISSUE** `#24915`_: (*jtand*) Salt-cloud not working in 2014.7.6
+    | refs: `#24944`_
+  * a11e4c6 Merge pull request `#24944`_ from techhat/issue24915
+  * 59c3081 Double-check main_cloud_config
+
+- **PR** `#24936`_: (*jtand*) Fixed ps module to not use depreciated psutil commands
+  @ *2015-06-24T22:38:19Z*
+
+  * d26a544 Merge pull request `#24936`_ from jtand/psutil
+  * bdb7a19 Fixed ps module to not use depreciated psutil commands
+
+- **PR** `#24918`_: (*BretFisher*) SmartOS SMF minion startup fix
+  @ *2015-06-24T15:44:26Z*
+
+  - **PR** `#473`_: (*whiteinge*) Added a couple functions to work with the minion file cache
+    | refs: `#24918`_
+  * eeb05a1 Merge pull request `#24918`_ from BretFisher/minion-start-smartos-smf-fix
+  * d7bfb0c Smartos smf minion fix
+
+- **PR** `#24780`_: (*nmadhok*) Backporting PR `#24777`_ to 2014.7 branch
+  @ *2015-06-18T14:52:56Z*
+
+  - **ISSUE** `#24776`_: (*nmadhok*) --static option in salt raises ValueError and has been broken for a very long time
+    | refs: `#24777`_
+  - **PR** `#24779`_: (*nmadhok*) Backporting Changes to 2014.7 branch
+    | refs: `#24777`_
+  - **PR** `#24778`_: (*nmadhok*) Backporting PR `#24777`_ to 2015.2 branch
+    | refs: `#24777`_
+  - **PR** `#24777`_: (*nmadhok*) Fixing issue where --static option fails with ValueError Fixes `#24776`_
+    | refs: `#24780`_ `#24778`_
+  * 4281dff Merge pull request `#24780`_ from nmadhok/backport-2014.7-24777
+  * c53b0d9 Backporting PR `#24777`_ to 2014.7 branch
+
+- **PR** `#24769`_: (*msteed*) Fix stacktrace in get_cli_returns()
+  @ *2015-06-18T14:31:46Z*
+
+  - **ISSUE** `#21318`_: (*thanatos*) get_full_returns raises KeyError
+    | refs: `#24769`_
+  - **ISSUE** `#18994`_: (*njhartwell*) salt.client.get_cli_returns errors when called immediately after run_job
+    | refs: `#24769`_
+  * f3c5cb2 Merge pull request `#24769`_ from msteed/issue-21318
+  * f40a9d5 Fix stacktrace in get_cli_returns()
+
+- **PR** `#24690`_: (*twangboy*) Report powershell output instead of error
+  @ *2015-06-17T16:33:49Z*
+
+  - **ISSUE** `#17041`_: (*xenophonf*) Confusing Salt error messages due to limited/incomplete PowerShell command error handling
+    | refs: `#24690`_
+  * 59db246 Merge pull request `#24690`_ from twangboy/fix_17041
+  * 7a01538 Added additional reporting
+
+  * d84ad5d Fixed capitalization... Failed and Already
+
+  * e955245 Merge branch '2014.7' of https://github.com/saltstack/salt into fix_17041
+
+- **PR** `#24646`_: (*twangboy*) Fixed user.present on existing user
+  @ *2015-06-15T15:04:43Z*
+
+  - **ISSUE** `#24196`_: (*johnccfm*) Exception when using user.present with Windows
+    | refs: `#24646`_
+  * a18dada Merge pull request `#24646`_ from twangboy/fix_24196
+  * a208e1d Fixed user.present on existing user
+
+  * 144bff2 Report powershell output instead of error
+
+- **PR** `#24643`_: (*cro*) Add reference to salt-announce mailing list
+  @ *2015-06-12T20:21:15Z*
+
+  * b99484f Merge pull request `#24643`_ from cro/saltannounce
+  * ecb0623 Add salt-announce mailing list.
+
+- **PR** `#24620`_: (*twangboy*) Fixed comment and uncomment functions in file.py
+  @ *2015-06-12T19:36:26Z*
+
+  * 635121e Merge pull request `#24620`_ from twangboy/fix_24215
+  * d7a9999 Fixed comment and uncomment functions in file.py
+
+- **PR** `#24589`_: (*BretFisher*) Fixed Mine example for jinja code block
+  @ *2015-06-11T15:48:02Z*
+
+  * d83928a Merge pull request `#24589`_ from BretFisher/patch-1
+  * 65a1133 Fixed Mine example for jinja code block
+
+- **PR** `#24530`_: (*twangboy*) Start Minion Service on Silent Install
+  @ *2015-06-09T21:30:08Z*
+
+  - **ISSUE** `#24427`_: (*fayetted*) 2015.5.1-3 Windows 64Bit Minion fails to start after install
+    | refs: `#24530`_
+  * d376390 Merge pull request `#24530`_ from twangboy/fix_24427
+  * 673e1d8 Added missing panel.bmp for installer
+
+  * cc50218 Start Minion Service on Silent Install
+
+- **PR** `#24513`_: (*jquast*) bugfix use of 'iteritem' in 2014.7 branch
+  @ *2015-06-09T04:06:36Z*
+
+  - **PR** `#24511`_: (*jquast*) bugfix: trailing "...done" in rabbitmq output
+    | refs: `#24513`_
+  * 6ebc476 Merge pull request `#24513`_ from jquast/2014.7-bugfix-iteritem
+  * 2be0180 bugfix use of 'iteritem' in 2014.7 branch
+
+- **PR** `#24405`_: (*jacksontj*) Fix for `#24276`_
+  @ *2015-06-04T20:50:42Z*
+
+  - **ISSUE** `#24276`_: (*markuskramerIgitt*) Live salt-master Profiling with SIGUSR2 fails 
+  * 83f853b Merge pull request `#24405`_ from jacksontj/2014.7
+  * 2c7afae Fix for `#24276`_
+
+- **PR** `#24395`_: (*hvnsweeting*) handle exceptions when received data is not in good shape
+  @ *2015-06-04T20:08:22Z*
+
+  * cef919c Merge pull request `#24395`_ from hvnsweeting/handle-exception-get-file
+  * bb798a0 handle exceptions when received data is not in good shape
+
+- **PR** `#24305`_: (*twangboy*) Added documentation, fixed formatting
+  @ *2015-06-04T19:40:54Z*
+
+  * efba1a9 Merge pull request `#24305`_ from twangboy/win_path_docs
+  * 36804253 Fixed pylint error caused by \\P... added r
+
+  * bc42a4b triple double quotes to triple single quotes
+
+  * 77cd930 Added documentation, fixed formatting
+
+- **PR** `#24178`_: (*rallytime*) Backport `#24118`_ to 2014.7, too.
+  @ *2015-05-27T17:49:45Z*
+
+  - **PR** `#24118`_: (*trevor-h*) removed deprecated pymongo usage
+    | refs: `#24178`_
+  * 9d7331c Merge pull request `#24178`_ from rallytime/`bp-24118`_
+  * e2217a0 removed deprecated pymongo usage as no longer functional with pymongo > 3.x
+
+- **PR** `#24159`_: (*rallytime*) Fill out modules/keystone.py CLI Examples
+  @ *2015-05-27T15:07:11Z*
+
+  * 4e8c503 Merge pull request `#24159`_ from rallytime/keystone_doc_examples
+  * dadac8d Fill out modules/keystone.py CLI Examples
+
+- **PR** `#24158`_: (*rallytime*) Fix test_valid_docs test for tls module
+  @ *2015-05-27T15:06:05Z*
+
+  * fc10ee8 Merge pull request `#24158`_ from rallytime/fix_doc_error
+  * 49a517e Fix test_valid_docs test for tls module
+
+- **PR** `#24125`_: (*hvnsweeting*) Fix rabbitmq test mode
+  @ *2015-05-26T15:40:18Z*
+
+  * c0d32e0 Merge pull request `#24125`_ from hvnsweeting/fix-rabbitmq-test-mode
+  * 71862c6 enhance log
+
+  * 28e2594 change according to new output of rabbitmq module functions
+
+  * cd0212e processes and returns better output for rabbitmq module
+
+- **PR** `#24093`_: (*msteed*) Make LocalClient.cmd_iter_no_block() not block
+  @ *2015-05-25T15:56:42Z*
+
+  - **ISSUE** `#23464`_: (*tibold*) cmd_iter_no_block() blocks
+    | refs: `#24093`_
+  * 39a8f30 Merge pull request `#24093`_ from msteed/issue-23464
+  * fd35903 Fix failing test
+
+  * 41b344c Make LocalClient.cmd_iter_no_block() not block
+
+- **PR** `#24008`_: (*davidjb*) Correct reST formatting for states.cmd documentation
+  @ *2015-05-21T04:19:01Z*
+
+  * 5bffd30 Merge pull request `#24008`_ from davidjb/2014.7
+  * 8b8d029 Correct reST formatting for documentation
+
+- **PR** `#23933`_: (*jacobhammons*) sphinx saltstack2 doc theme
+  @ *2015-05-20T18:19:19Z*
+
+  * 1aa0420 Merge pull request `#23933`_ from jacobhammons/2014.7
+  * a3613e6 removed numbering from doc TOC
+
+  * 78b737c removed 2015.* release from release notes, updated index page to remove PDF/epub links
+
+  * e867f7d Changed build settings to use saltstack2 theme and update release versions.
+
+  * 81ed9c9 sphinx saltstack2 doc theme
+
+- **PR** `#23965`_: (*hvnsweeting*) handle all exceptions gitpython can raise
+  @ *2015-05-20T15:08:03Z*
+
+  * 314e4db Merge pull request `#23965`_ from hvnsweeting/20147-fix-gitfs-gitpython-exception
+  * 2576301 handle all exception gitpython can raise
 
 - **PR** `#23939`_: (*basepi*) Add extended changelog to 2014.7.6 release notes
   @ *2015-05-19T21:21:00Z*
@@ -56,7 +247,11 @@ Changes:
   * 379c09c Updated for SLES 12.
 
 
+.. _`#17041`: https://github.com/saltstack/salt/issues/17041
+.. _`#18994`: https://github.com/saltstack/salt/issues/18994
+.. _`#21318`: https://github.com/saltstack/salt/issues/21318
 .. _`#22131`: https://github.com/saltstack/salt/issues/22131
+.. _`#23464`: https://github.com/saltstack/salt/issues/23464
 .. _`#23820`: https://github.com/saltstack/salt/issues/23820
 .. _`#23848`: https://github.com/saltstack/salt/pull/23848
 .. _`#23871`: https://github.com/saltstack/salt/pull/23871
@@ -64,5 +259,40 @@ Changes:
 .. _`#23887`: https://github.com/saltstack/salt/pull/23887
 .. _`#23888`: https://github.com/saltstack/salt/pull/23888
 .. _`#23891`: https://github.com/saltstack/salt/pull/23891
+.. _`#23933`: https://github.com/saltstack/salt/pull/23933
 .. _`#23939`: https://github.com/saltstack/salt/pull/23939
+.. _`#23965`: https://github.com/saltstack/salt/pull/23965
+.. _`#24008`: https://github.com/saltstack/salt/pull/24008
+.. _`#24093`: https://github.com/saltstack/salt/pull/24093
+.. _`#24118`: https://github.com/saltstack/salt/pull/24118
+.. _`#24125`: https://github.com/saltstack/salt/pull/24125
+.. _`#24158`: https://github.com/saltstack/salt/pull/24158
+.. _`#24159`: https://github.com/saltstack/salt/pull/24159
+.. _`#24178`: https://github.com/saltstack/salt/pull/24178
+.. _`#24196`: https://github.com/saltstack/salt/issues/24196
+.. _`#24276`: https://github.com/saltstack/salt/issues/24276
+.. _`#24305`: https://github.com/saltstack/salt/pull/24305
+.. _`#24395`: https://github.com/saltstack/salt/pull/24395
+.. _`#24405`: https://github.com/saltstack/salt/pull/24405
+.. _`#24427`: https://github.com/saltstack/salt/issues/24427
+.. _`#24511`: https://github.com/saltstack/salt/pull/24511
+.. _`#24513`: https://github.com/saltstack/salt/pull/24513
+.. _`#24530`: https://github.com/saltstack/salt/pull/24530
+.. _`#24589`: https://github.com/saltstack/salt/pull/24589
+.. _`#24620`: https://github.com/saltstack/salt/pull/24620
+.. _`#24643`: https://github.com/saltstack/salt/pull/24643
+.. _`#24646`: https://github.com/saltstack/salt/pull/24646
+.. _`#24690`: https://github.com/saltstack/salt/pull/24690
+.. _`#24769`: https://github.com/saltstack/salt/pull/24769
+.. _`#24776`: https://github.com/saltstack/salt/issues/24776
+.. _`#24777`: https://github.com/saltstack/salt/pull/24777
+.. _`#24778`: https://github.com/saltstack/salt/pull/24778
+.. _`#24779`: https://github.com/saltstack/salt/pull/24779
+.. _`#24780`: https://github.com/saltstack/salt/pull/24780
+.. _`#24915`: https://github.com/saltstack/salt/issues/24915
+.. _`#24918`: https://github.com/saltstack/salt/pull/24918
+.. _`#24936`: https://github.com/saltstack/salt/pull/24936
+.. _`#24944`: https://github.com/saltstack/salt/pull/24944
+.. _`#473`: https://github.com/saltstack/salt/pull/473
 .. _`bp-23848`: https://github.com/saltstack/salt/pull/23848
+.. _`bp-24118`: https://github.com/saltstack/salt/pull/24118
