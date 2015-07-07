@@ -144,8 +144,8 @@ foreach my $line (reverse @result) {
     $line =~ s/\\/\\\\/g;
 }
 print "\nChanges for $args\n";
-print "------------" . '-' x length($args) . "\n";
-print "Extended changelog courtesy of Todd Stansell (https://github.com/tjstansell/salt-changelogs):\n";
+print "------------" . '-' x length($args) . "\n\n";
+print "Extended changelog courtesy of Todd Stansell (https://github.com/tjstansell/salt-changelogs):\n\n";
 my $date = strftime("%FT%TZ", gmtime());
 print "*Generated at: $date*\n\n";
 print "Statistics:\n\n";
