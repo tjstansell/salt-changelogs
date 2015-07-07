@@ -2,7 +2,9 @@
 Changes for v2015.5.0..v2015.5.1
 --------------------------------
 
-*Generated at: 2015-05-26T16:37:50Z*
+Extended changelog courtesy of Todd Stansell (https://github.com/tjstansell/salt-changelogs):
+
+*Generated at: 2015-07-07T23:28:39Z*
 
 Statistics:
 
